@@ -1,0 +1,175 @@
+{% extends 'layout.html' %}
+
+{% block contents %}
+        <!-- NAV -->
+
+
+        <!-- 메인 슬라이드 
+        <div class="main_slide -frame">
+            <div class="ms uk-position-relative uk-light" uk-slideshow="ratio: 40:13" uk-slider="autoplay: true">
+
+
+                <ul class="uk-slideshow-items">
+                    <li>
+                        <img src="https://www.franchisecoex.co.kr/admin/data/banner/visual_2001141026061.png" alt=""
+                            uk-cover>
+                    </li>
+                    <li>
+                        <img src="https://www.franchisesetec.co.kr/admin/data/banner/visual_2002240407361.png" alt=""
+                            uk-cover>
+                    </li>
+                    <li>
+                        <img src="https://www.franchisesetec.co.kr/admin/data/banner/visual_2002250526343.png" alt=""
+                            uk-cover>
+                    </li>
+                    <li>
+                        <img src="http://www.ezendolls.com/_wg/img/JS_23165_01/main01.jpg" alt="" uk-cover>
+                    </li>
+                    <li>
+                        <img src="http://www.ezendolls.com/_wg/img/JS_23165_01/w08_1.jpg" alt="" uk-cover>
+                    </li>
+                </ul>
+                <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#"
+                    uk-slidenav-previous uk-slideshow-item="previous"></a>
+                <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#"
+                    uk-slidenav-next uk-slideshow-item="next"></a>
+
+                <div class="uk-position-bottom-center uk-position-small">
+                    <ul class="uk-dotnav">
+                        <li uk-slideshow-item="0"><a href="#">Item 1</a></li>
+                        <li uk-slideshow-item="1"><a href="#">Item 2</a></li>
+                        <li uk-slideshow-item="2"><a href="#">Item 3</a></li>
+                        <li uk-slideshow-item="3"><a href="#">Item 4</a></li>
+                        <li uk-slideshow-item="4"><a href="#">Item 5</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        -->
+
+        <!--akfgnakjgnaj-->
+        <div class="main_slide ">
+            <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
+                uk-slider="center: true; autoplay: true; autoplay-interval:5000;">
+
+                <ul class="uk-slider-items uk-grid">
+                    <li class="uk-width-3-4">
+                        <div class="uk-panel">
+                            <img src="https://www.franchisecoex.co.kr/admin/data/banner/visual_2001141026061.png"
+                                alt="">
+                            <div class="uk-position-center uk-panel">
+                                <h1>1</h1>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="uk-width-3-4">
+                        <div class="uk-panel">
+                            <img src="https://www.franchisesetec.co.kr/admin/data/banner/visual_2002240407361.png"
+                                alt="">
+                            <div class="uk-position-center uk-panel">
+                                <h1>2</h1>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="uk-width-3-4">
+                        <div class="uk-panel">
+                            <img src="https://www.franchisesetec.co.kr/admin/data/banner/visual_2002250526343.png"
+                                alt="">
+                            <div class="uk-position-center uk-panel">
+                                <h1>3</h1>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+
+                <!--
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+            -->
+                <a class="uk-position-center-left" href="" uk-slidenav-previous></a>
+                <a class="uk-position-center-right" href="" uk-slidenav-next></a>
+
+            </div>
+        </div>
+
+        <hr class="uk-divider-icon">
+        <div class="2nd_wrap -frame">
+            <!-- 프랜차이즈 뉴스 -->
+            <div class="main_news">
+                <h3 class="-news_title">프랜차이즈 뉴스</h3>
+                <div class="uk-position-relative uk-margin-medium" id="news_tag">
+                    <ul class="uk-child-width-expand" uk-tab="swiping: false">
+                        <li class="uk-active"><a>전체</a></li>
+                        <li><a >창업</a></li>
+                        <li><a >시장</a></li>
+                        <li><a >뉴스</a></li>
+                    </ul>
+                </div>
+                <ul class="uk-list uk-list-bullet uk-list-striped">
+                    <li>List item 1</li>
+                    <li>List item 2</li>
+                    <li>List item 3</li>
+                    <li>List item 4</li>
+                </ul>
+                <ul class="uk-list uk-list-bullet uk-list-striped list-hidden">
+                    <li>창업 1</li>
+                    <li>창업 2</li>
+                    <li>창업 3</li>
+                    <li>창업 4</li>
+                </ul>
+                <ul class="uk-list uk-list-bullet uk-list-striped list-hidden">
+                    <li>시장 1</li>
+                    <li>시장 2</li>
+                    <li>시장 3</li>
+                    <li>시장 4</li>
+                </ul>
+                <ul class="uk-list uk-list-bullet uk-list-striped list-hidden">
+                    <li>뉴스 1</li>
+                    <li>뉴스 2</li>
+                    <li>뉴스 3</li>
+                    <li>뉴스 4</li>
+                </ul>
+            </div>
+            <!-- 창업 파트너즈 -->
+            <div class="cps">
+                <h3 class="-news_title">창업 파트너즈</h3>
+                <div class="uk-position-relative uk-margin-medium" id="cp_tag">
+                    <ul class="uk-child-width-expand" uk-tab="swiping: false">
+                        <li class="uk-active"><a>요식</a></li>
+                        <li><a >서비스</a></li>
+                        <li><a >도·소매</a></li>
+                        <li><a >기타</a></li>
+                    </ul>
+                </div>
+                <ul class="uk-list uk-list-bullet uk-list-striped">
+                    <li>요식 1</li>
+                    <li>요식 2</li>
+                    <li>요식 3</li>
+                    <li>요식 4</li>
+                </ul>
+                <ul class="uk-list uk-list-bullet uk-list-striped list-hidden">
+                    <li>서비스 1</li>
+                    <li>서비스 2</li>
+                    <li>서비스 3</li>
+                    <li>서비스 4</li>
+                </ul>
+                <ul class="uk-list uk-list-bullet uk-list-striped list-hidden">
+                    <li>도·소매 1</li>
+                    <li>도·소매 2</li>
+                    <li>도·소매 3</li>
+                    <li>도·소매 4</li>
+                </ul>
+                <ul class="uk-list uk-list-bullet uk-list-striped list-hidden">
+                    <li>기타 1</li>
+                    <li>기타 2</li>
+                    <li>기타 3</li>
+                    <li>기타 4</li>
+                </ul>
+            </div>
+
+
+
+{% endblock %}

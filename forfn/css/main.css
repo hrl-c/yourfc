@@ -1,0 +1,139 @@
+.size {
+    height: 390px !important;
+}
+.ms ul li img{
+    width: 1200px !important;
+    height: 390px!important;
+}
+.event {
+    margin-top: 40px;
+}
+.event>ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+/*
+.event>ul {
+    display: inline-block;
+    position: relative;
+}
+*/
+.event ul img {
+    margin: 10px;
+    margin-left:0;
+    width: 257.3px;
+    height: 320px;
+
+}
+
+/*======= MD's PICK */
+.md_pick{
+    margin-top: 50px;
+}
+.md_pick>h2 {
+    position: relative;
+    margin: 0 auto 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+}
+.line{
+    width: 2%;
+    height: 0px;
+    margin: 30px auto;
+    border-top: 1px solid #111;
+    line-height: 0;
+}
+
+.prdList {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+    font-size: 12px;
+    font-weight: 550;
+    color: #555555;
+}
+.prdList li {
+    display: table-cell;
+    vertical-align: middle;
+
+    text-align: center;
+}
+.thumb {
+    height: 220px;
+    width: 100%;
+}
+.thumb img {
+    height: 220px;
+    width: 220px;
+}
+.prd_info {
+    flex: 1;
+    padding: 20px 10px 0;
+    margin: 0 45px;
+}
+.prdList .line{
+    width: 7%;
+    height: 0px;
+    margin: 15px auto;
+    border-top: 1px solid #111;
+    line-height: 0;
+}
+.prd_price {
+    font-size:14px;
+}
+.ex_price {
+    color: #999999;
+    text-decoration: line-through;
+    font-weight: 400;
+}
+.soldout {
+    color: red;
+    font-weight: 600;
+    visibility: hidden;
+}
+.-soldout {
+    visibility: visible;
+}
+
+/*===== NEWS */
+.main_news {
+    width: 40%;
+    margin: 30px 4%;
+    padding: 30px 1%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.cps {
+    width: 40%;
+    margin: 30px 4%;
+    padding: 30px 1%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.-news_title {
+    font-weight: 600;
+}
+.uk-list-bullet>li::before {
+    top: 11px;
+}
+
+
+
+
+.main_slide img {
+    min-height: 290px;
+    width: auto
+}
+
+.list-hidden {
+    display: none;
+}
+.list-show {
+    display: block;
+}

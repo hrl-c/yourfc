@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/css/uikit.min.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/search_brand.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/js/uikit.min.js"></script>
+    <script src="../js/uikit.min.js"></script>
+    <script src="../js/uikit-icons.min.js"></script>
+    <script src="../js/test.js"></script>
+    <script src="../js/search_brand.js"></script>
+    <title>브랜드 검색 | 당신의 프랜차이즈</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="util_bar -frame">
+                <ul class="util uk-list uk-link-text">
+                    <li><a href="#">로그인</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href="#">회원가입</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href="#">마이페이지</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href="#">
+                            <span class="vip">VIP</span>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="logo -frame">
+                <a href="/">
+                    <img src="../images/logo_2.png">
+                </a>
+                <div class="search uk-margin right_in_nav">
+                    <form class="uk-search uk-search-default">
+                        <span class="uk-search-icon-flip" uk-search-icon></span>
+                        <input class="uk-search-input" type="search" placeholder="상호명 검색">
+                    </form>
+                </div>
+            </div>
+            <nav class="uk-navbar-container my_nav" uk-navbar>
+                <div class="uk-navbar-left -frame">
+                    <ul class="uk-navbar-nav">
+
+                        <li>
+                            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
+                            <div class="uk-navbar-dropdown -frame"
+                                uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify;">
+                                <div class="uk-navbar-dropdown-grid uk-child-width-1-5 -frame" uk-grid>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">브랜드 검색</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#">전체 브랜드</a></li>
+                                            <li><a href="#">요식업</a></li>
+                                            <li><a href="#">서비스업</a></li>
+                                            <li><a href="#">도·소매업</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업 박람회</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#">COEX</a></li>
+                                            <li><a href="#">SETEC</a></li>
+                                            <li><a href="#">IFC</a></li>
+                                            <li><a href="#">매장기기전문</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업 파트너즈</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">인테리어</a></li>
+                                            <li><a href="#">간판</a></li>
+                                            <li><a href="#">가구</a></li>
+                                            <li><a href="#">디자인</a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">주방</a></li>
+                                            <li><a href="#">POS</a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">세무사</a></li>
+                                            <li><a href="#">노무사</a></li>
+                                            <li><a href="#">보험</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업뉴스</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#">창업지원</a></li>
+                                            <li><a href="#">창업교육</a></li>
+                                            <li><a href="#">시설·공간</a></li>
+                                            <li><a href="#">엑셀러레이팅</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">내 주위 프랜차이즈</a></li>
+                                            <li>&nbsp;</li>
+
+                                            <li class="uk-active"><a
+                                                    href="https://franchise.ftc.go.kr/main/subIndex/23.do">
+                                                    가맹사업 <span style="color:coral">주요</span> 정보</a></li>
+                                            <li>&nbsp;</li>
+
+                                            <li class="uk-active"><a href="http://www.ikfa.or.kr/">
+                                                    한국 프랜차이즈협회 바로가기</a></li>
+                                            <li>&nbsp;</li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">브랜드 검색</a>
+                            <div class="uk-navbar-dropdown -top_control">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">전체 브랜드</a></li>
+                                    <li class="uk-nav-header_sub"><a href="#">요식업</a></li>
+                                    <li><a href="#">서비스업</a></li>
+                                    <li><a href="#">도·소매업</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업 박람회</a>
+                            <div class="uk-navbar-dropdown -top_control">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">COEX</a></li>
+                                    <li><a href="#">SETEC</a></li>
+                                    <li><a href="#">IFC</a></li>
+                                    <li class="uk-nav-header_sub"><a href="#">매장기기전문</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업 파트너즈</a>
+                            <div class="uk-navbar-dropdown -top_control">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li class="uk-nav-header -bold"><a href="#">인테리어 파트너즈</a></li>
+                                    <li><a href="#">인테리어</a></li>
+                                    <li><a href="#">간판</a></li>
+                                    <li><a href="#">가구</a></li>
+                                    <li><a href="#">디자인</a></li>
+                                    <li class="uk-nav-header -bold"><a href="#">매장기기 파트너즈</a></li>
+                                    <li><a href="#">주방</a></li>
+                                    <li><a href="#">POS</a></li>
+                                    <li class="uk-nav-header -bold"><a href="#">법률 파트너즈</a></li>
+                                    <li><a href="#">세무사</a></li>
+                                    <li><a href="#">노무사</a></li>
+                                    <li><a href="#">보험</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업뉴스</a>
+                            <div class="uk-navbar-dropdown -top_control">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">창업지원</a></li>
+                                    <li><a href="#">창업교육</a></li>
+                                    <li><a href="#">시설·공간</a></li>
+                                    <li><a href="#">엑셀러레이팅</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="uk-active">
+                            <a href="#">내 주위 프랜차이즈</a>
+                        </li>
+                        <li class="uk-active little_right">
+                            <a href="#"><span class="vip">VIP</span> &nbsp;서비스 바로가기</a>
+                        </li>
+                </div>
+            </nav>
+        </div>
+
+        <div class="search_brand -frame">
+            <table class="uk-table uk-table-hover uk-table-divider search_brand_table">
+                <thead>
+                    <tr>
+                        <th>영업표지</th>
+                        <th>상호</th>
+                        <th>대분류</th>
+                        <th>중분류</th>
+                        <th>가맹점수</th>
+                        <th>창업비용</th>
+                        <th>평균매출액</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#1">
+                                젠요가
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                (주)젠요가
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                서비스
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                기타 서비스
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                8
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                3억 5000만원
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                3억 5600만원
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#1">
+                                긱스피자
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                (주)긱스에프앤비
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                요식업
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                피자
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                15
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                6755 만원
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#1">
+                                3억 2760만원
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>
