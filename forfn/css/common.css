@@ -1,9 +1,13 @@
+html {
+    overflow: auto;
+}
 body {
     font-family: "-apple-system,BlinkMacSystemFont", sans-serif !important;
   }
   
   body {
-      width: 1910px;
+      width: 100%;
+      margin: 0 auto;
       color: #333;
   }
   .header {
@@ -63,14 +67,14 @@ body {
       display: block;
       margin: 0 auto;
   }
-  .search {
-      margin: 0 !important;
-      display: block;
+  #search {
+     width: 300px;
   }
+  /*
   .uk-search-default {
       width: 350px;
   }
-  
+  */
   /*=============== NAV */
   .-frame {
       width: 1200px;

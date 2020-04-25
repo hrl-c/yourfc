@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/css/uikit.min.css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='./css/common.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='./css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/search_brand.css') }}">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/js/uikit.min.js"></script>
     <script src="{{ url_for('static', filename='./js/uikit.min.js') }}"></script>
     <script src="{{ url_for('static', filename='./js/uikit-icons.min.js') }}"></script>
     <script src="{{ url_for('static', filename='./js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/search_brand.js') }}"></script>
     <title>당신의 프랜차이즈</title>
     <script>
 
@@ -55,7 +57,7 @@
                         <li>
                             <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
                             <div class="uk-navbar-dropdown -frame"
-                                uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify;">
+                                uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify; delay-hide: 100;">
                                 <div class="uk-navbar-dropdown-grid uk-child-width-1-5 -frame" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -127,7 +129,7 @@
                         </li>
                         <li>
                             <a href="#">브랜드 검색</a>
-                            <div class="uk-navbar-dropdown -top_control">
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="#">전체 브랜드</a></li>
                                     <li class="uk-nav-header_sub"><a href="#">요식업</a></li>
@@ -138,7 +140,7 @@
                         </li>
                         <li>
                             <a href="#">창업 박람회</a>
-                            <div class="uk-navbar-dropdown -top_control">
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="#">COEX</a></li>
                                     <li><a href="#">SETEC</a></li>
@@ -149,7 +151,7 @@
                         </li>
                         <li>
                             <a href="#">창업 파트너즈</a>
-                            <div class="uk-navbar-dropdown -top_control">
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li class="uk-nav-header -bold"><a href="#">인테리어 파트너즈</a></li>
                                     <li><a href="#">인테리어</a></li>
@@ -168,7 +170,7 @@
                         </li>
                         <li>
                             <a href="#">창업뉴스</a>
-                            <div class="uk-navbar-dropdown -top_control">
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="#">창업지원</a></li>
                                     <li><a href="#">창업교육</a></li>
