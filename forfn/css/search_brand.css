@@ -10,12 +10,21 @@
 }
 
 /* ====== 조건박스 */
-.search_options {
-    height:200px;
+.select_for_brand {
+    
+}
+.-first {
+    width: 800px;
+    float: left;
+}
+.-second {
+    width:250px;
+    float: right;
 }
 
 .search_options div {
-    height:200px;
+    height:150px;
+    display: inline-block;
 }
 
 /* ====== TABLE */
@@ -27,6 +36,9 @@
 .big_sort {
     font-weight: 600;
 } /* 요식업 도소매 서비스 '만' */
+.uk-table {
+    margin-top: 110px;
+}
 th {
     font-weight: bold !important;
     border-bottom: 3px !important;
@@ -38,16 +50,15 @@ th {
     padding: 30px;
 }
 
-.label_box_1st {
-    display: table-cell;
-    vertical-align: middle;
-    height:70px !important;
-}
 .label_box {
     display: table-cell;
     vertical-align: middle;
-    height:70px !important;
+    height:60px !important;
     padding-left: 54px;
+    margin-top: 20px;
+}
+.-l1st {
+    padding-left: 0px;
 }
 label{
     font-weight:600;
@@ -58,10 +69,5 @@ label{
 .-submit {
     font-size: 14px;
     float: right;
-    margin-right: 75px;
+    margin-right: 5px;
 }
-/*
-.form_2nd {
-    margin-top: 20px;
-}
-*/

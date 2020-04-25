@@ -1,4 +1,25 @@
 $(function () {
+    // 가짜 기업 거시기 임시로 만들기
+    for (var i=0; i<10; i++) {
+        let m1 = '하람코딩';
+        let m2 = '(주)하람';
+        let m3 = '서비스';
+        let m4 = '교육';
+        let m5 = '5000';
+        let m6 = '2억 3000 만';
+        let m7 = '15억 7000 만';
+        make_temp(m1,m2 ,m3,m4,m5,m6,m7);
+    }
+    function make_temp(name1, name2, big, small, stores, money, total_money) {
+        let temp = '<tr><td><a href="#1">'+ name1 + '</a></td>\
+                        <td><a href="#1">'+ name2 + '</a></td>\
+                        <td><a href="#1 class="big_sort">'+ big +'</a></td>\
+                        <td><a href="#1 class="small_sort">'+ small +'</a></td>\
+                        <td><a href="#1" class="-center">'+ stores + '</a></td>\
+                        <td><a href="#1" class="-right">'+ money + '</a></td>\
+                        <td><a href="#1" class="-right">'+ total_money + '</a></td></tr>'
+        $('tbody').append(temp);
+    }
     let nownum = 0;
 
 
