@@ -1,0 +1,64 @@
+.contents_signup {
+    width: 800px;
+    margin: 40px auto;
+}
+.uk-card {
+    background-color: #fafafa;
+}
+
+/* ============== signup_terms.html */
+.terms_box {
+    overflow: auto;
+    height: 122px;
+    border: 1px solid #dadada;
+    background-color: #fff;
+    padding: 12px;
+    font-size:10px;
+}
+.title_box {
+    margin: 45px auto 8px;
+}
+.terms_title {
+    display: inline;
+}
+.terms_title_first {
+    font-weight: 600 !important;
+}
+
+/* ============== signup.html */
+.form_signup {
+    text-align: center;
+}
+
+.-small {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.-red {
+    color: #f0506e;
+}
+.-none {
+    display: none;
+}
+
+.-title_signup {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.9rem;
+}
+.signup_row {
+    margin-bottom: 20px;
+}
+.signup_title {
+    font-size: 1rem ;
+    font-weight: 600;
+    width: 400px;
+    margin: 0 auto 8px;
+    text-align: left;
+}
+.signup_title>label {
+    padding: 5px;
+}
+.-size_control {
+    width: 400px;
+}
