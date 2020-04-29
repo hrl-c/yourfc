@@ -4,7 +4,7 @@ from flask import Flask, render_template, jsonify, request
 app = Flask(__name__)
 
 client = MongoClient('localhost', 27017)
-db = client.dbsparta
+db = client.dbtest
 
 
 # HTML을 주는 부분
@@ -15,28 +15,38 @@ def home():
 # API 역할을 하는 부분
 @app.route('/vip', methods=['GET'])
 def check_vip():
-    if (1 < 3) :
+    if (0) : #세션을 넣겠다는 의미
         return render_template('vip.html')
+    else :
+        return render_template('vip_plan.html')
 
+@app.route('/search_brand', methods=['GET'])
+def goToSearch_brand():
+    return render_template('search_brand.html')
 
-@app.route('/api/like', methods=['POST'])
-def star_like():
-    # 1. 클라이언트가 전달한 name_give를 name_receive 변수에 넣습니다.
-    # 2. mystar 목록에서 find_one으로 name이 name_receive와 일치하는 star를 찾습니다.
-    # 3. star의 like 에 1을 더해준 new_like 변수를 만듭니다.
-    # 4. mystar 목록에서 name이 name_receive인 문서의 like 를 new_like로 변경합니다.
-    # 참고: '$set' 활용하기!
-    # 5. 성공하면 success 메시지를 반환합니다.
-	return jsonify({'result': 'success','msg':'like 연결되었습니다!'})
+@app.route('/first', methods=['POST'])
+def saving():
+    receive = request.get_json()
+    print(receive)
 
-
-@app.route('/api/delete', methods=['POST'])
-def star_delete():
-    # 1. 클라이언트가 전달한 name_give를 name_receive 변수에 넣습니다.
-    # 2. mystar 목록에서 delete_one으로 name이 name_receive와 일치하는 star를 제거합니다.
-    # 3. 성공하면 success 메시지를 반환합니다.
-	return jsonify({'result': 'success','msg':'delete 연결되었습니다!'})
-
+    return jsonify({'result':'success', 'msg':'I GOT IT'})
+# LOGIN
+@app.route('/login', methods=['GET'])
+def goToLoginPage():
+    return render_template('login.html')
+@app.route('/login', methods=['POST'])
+def login():
+    id_receive = request.form['id_give']
+    pw_receive = request.form['pw_give']
+    result = db.users.find({"id": id_receive})
+    if( result ):
+        real_pw = result.password
+        if ( real_pw == pw_receive ):
+            return jsonify({'result':'success', 'msg':'I GOT IT'}), render_template('index.html')
+        else:
+            return jsonify({'result':'pw_error', 'msg':'I GOT IT'})
+    else:
+        return jsonify({'result':'id_error', 'msg':'I GOT IT'})
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1002, debug=True)
+    app.run('127.0.0.1', port=1017,  debug=True)

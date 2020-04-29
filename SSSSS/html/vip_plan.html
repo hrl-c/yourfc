@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/css/uikit.min.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/vip_plan.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/js/uikit.min.js"></script>
+    <script src="../js/uikit.min.js"></script>
+    <script src="../js/uikit-icons.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/vip_plan.js"></script>
+    <title>당신의 프랜차이즈</title>
+</head>
+
+<body>
+    <div class='wrap'>
+        <!-- 해드 (로고, 로그인 회원가입 장바구니 마이페이지 등)-->
+        <div class="header">
+            <div class="util_bar -frame">
+                <ul class="util uk-list uk-link-text">
+                    <li><a href="./login.html">로그인</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href="#">회원가입</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href="#">마이페이지</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href=" /vip_plan">
+                            <span class="vip">VIP</span>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="logo -frame">
+                <a href="./home.html">
+                    <img src="../images/logo_2.png">
+                </a>
+                <div class="search uk-margin right_in_nav">
+                    <form class="uk-search uk-search-default">
+                        <button onclick="" class="uk-search-icon-flip" uk-search-icon></button>
+                        <input class="uk-search-input" type="search" placeholder="상호명 검색">
+                    </form>
+                </div>
+            </div>
+            <nav class="uk-navbar-container my_nav" uk-navbar>
+                <div class="uk-navbar-left -frame">
+                    <ul class="uk-navbar-nav">
+
+                        <li>
+                            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
+                            <div class="uk-navbar-dropdown -frame"
+                                uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify; delay-hide: 0;">
+                                <div class="uk-navbar-dropdown-grid uk-child-width-1-5 -frame" uk-grid>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="./search_brand.html">브랜드 검색</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="./search_brand.html">전체 브랜드</a></li>
+                                            <li><a href="#">요식업</a></li>
+                                            <li><a href="#">서비스업</a></li>
+                                            <li><a href="#">도·소매업</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업 박람회</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#">COEX</a></li>
+                                            <li><a href="#">SETEC</a></li>
+                                            <li><a href="#">IFC</a></li>
+                                            <li><a href="#">매장기기전문</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업 파트너즈</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">인테리어</a></li>
+                                            <li><a href="#">간판</a></li>
+                                            <li><a href="#">가구</a></li>
+                                            <li><a href="#">디자인</a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">주방</a></li>
+                                            <li><a href="#">POS</a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">세무사</a></li>
+                                            <li><a href="#">노무사</a></li>
+                                            <li><a href="#">보험</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업뉴스</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#">창업지원</a></li>
+                                            <li><a href="#">창업교육</a></li>
+                                            <li><a href="#">시설·공간</a></li>
+                                            <li><a href="#">엑셀러레이팅</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">내 주위 프랜차이즈</a></li>
+                                            <li>&nbsp;</li>
+
+                                            <li class="uk-active"><a
+                                                    href="https://franchise.ftc.go.kr/main/subIndex/23.do">
+                                                    가맹사업 <span style="color:coral">주요</span> 정보</a></li>
+                                            <li>&nbsp;</li>
+
+                                            <li class="uk-active"><a href="http://www.ikfa.or.kr/">
+                                                    한국 프랜차이즈협회 바로가기</a></li>
+                                            <li>&nbsp;</li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="./search_brand.html">브랜드 검색</a>
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="./search_brand.html">전체 브랜드</a></li>
+                                    <li class="uk-nav-header_sub"><a href="#">요식업</a></li>
+                                    <li><a href="#">서비스업</a></li>
+                                    <li><a href="#">도·소매업</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업 박람회</a>
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">COEX</a></li>
+                                    <li><a href="#">SETEC</a></li>
+                                    <li><a href="#">IFC</a></li>
+                                    <li class="uk-nav-header_sub"><a href="#">매장기기전문</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업 파트너즈</a>
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li class="uk-nav-header -bold"><a href="#">인테리어 파트너즈</a></li>
+                                    <li><a href="#">인테리어</a></li>
+                                    <li><a href="#">간판</a></li>
+                                    <li><a href="#">가구</a></li>
+                                    <li><a href="#">디자인</a></li>
+                                    <li class="uk-nav-header -bold"><a href="#">매장기기 파트너즈</a></li>
+                                    <li><a href="#">주방</a></li>
+                                    <li><a href="#">POS</a></li>
+                                    <li class="uk-nav-header -bold"><a href="#">법률 파트너즈</a></li>
+                                    <li><a href="#">세무사</a></li>
+                                    <li><a href="#">노무사</a></li>
+                                    <li><a href="#">보험</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업뉴스</a>
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">창업지원</a></li>
+                                    <li><a href="#">창업교육</a></li>
+                                    <li><a href="#">시설·공간</a></li>
+                                    <li><a href="#">엑셀러레이팅</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="uk-active">
+                            <a href="#">내 주위 프랜차이즈</a>
+                        </li>
+                        <li class="uk-active little_right">
+                            <a href=" /vip_plan"><span class="vip">VIP</span> &nbsp;서비스 바로가기</a>
+                        </li>
+                </div>
+            </nav>
+        </div>
+
+        <div class="contents_vip_plan -frame">
+            <h1 class="title">YOUR FranChise <span class="letter-vip">VIP</span> PALN</h1>
+            <div class="plan_boxs">
+                <div class="plan_box">
+                    <h1 class="vvip_title">VVIP</h1>
+                    <h4> &nbsp;&nbsp;&nbsp; <span class="price_big">38</span>,000</h4>
+                    <div class="hr"></div>
+                    <div class="benefit">
+                        <ul class="uk-list on_box">
+                            <li>
+                                <a class="uk-link-text" href="#">기업 열람<span class="plus uk-text-bolder">+</span></a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    기업의 더 자세한 정보 열람
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">박람회·사업설명회 자동캘린더</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    <span class="bold"><span class="-yellow">관심있는</span> 박람회 사업설명회</span> 등록시, <br>
+                                    자동으로 월별 캘린더에 저장
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">e-뉴스레터</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    회원가입시 입력한 이메일로 e-뉴스레터 발송
+                                    <br><span class="uk-text-meta">(마케팅 수신 동의 체크시 한정)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">제휴박람회 부분할인</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    SETEC는 무료! <br>
+                                    COEX · IFS 제휴 박람회 <span class="bold">최대 60% 할인</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">관심업체의 박람회 참여여부 <br>자동조회</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    <span class="bold -yellow">즐겨찾기</span> 되어있는 업체가 <br>
+                                    해당 <span class="bold">박람회에 참여하는지 </span>자동으로 조회 후 알림
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">Setec Free Pass</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    <span class="bold">SETEC개최 모든 프랜차이즈 박람회 무료</span>
+                                </div>
+                            </li>
+                            <li>
+
+                                <a class="uk-link-text" href="#">본사발행 팜플렛·정보지 <br>우편배송</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    가맹본사에서 발행하는 인쇄물을 <br><span class="bold">자택·회사 주소지로 배송</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">일정 알림</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    스케쥴이 있는 날 며칠전부터 <br> <span class="bold">카카오톡, 문자</span>로 일정을 알려주는 기능
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hr"></div>
+                    <button class="uk-button uk-button-primary" onclick="buy_plan('VVIP')">Buy now</button>
+                </div>
+                <div class="plan_box">
+                    <h1 class="vip_title">VIP</h1>
+                    <h4> &nbsp;&nbsp;&nbsp; <span class="price_big">29</span>,000</h4>
+                    <div class="hr"></div>
+                    <div class="benefit">
+                        <ul class="uk-list on_box">
+                            <li>
+                                <a class="uk-link-text" href="#">기업 열람<span class="plus uk-text-bolder">+</span></a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    기업의 더 자세한 정보 열람
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">박람회·사업설명회 자동캘린더</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    <span class="bold"><span class="-yellow">관심있는</span> 박람회 사업설명회</span> 등록시, <br>
+                                    자동으로 월별 캘린더에 저장
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">e-뉴스레터</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    회원가입시 입력한 이메일로 e-뉴스레터 발송
+                                    <br><span class="uk-text-meta">(마케팅 수신 동의 체크시 한정)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">제휴박람회 부분할인</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    SETEC는 무료! <br>
+                                    COEX · IFS 제휴 박람회 <span class="bold">최대 60% 할인</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">관심업체의 박람회 참여여부 <br>자동조회</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    <span class="bold -yellow">즐겨찾기</span> 되어있는 업체가 <br>
+                                    해당 <span class="bold">박람회에 참여하는지 </span>자동으로 조회 후 알림
+                                </div>
+                            </li>
+                            <div style="height:165px;"></div>
+                        </ul>
+                    </div>
+                    <div class="hr"></div>
+                    <button class="uk-button uk-button-primary" onclick="buy_plan('VIP')">Buy now</button>
+                </div>
+                <div class="plan_box">
+                    <h1 class="general_title">General</h1>
+                    <h4> &nbsp;&nbsp;&nbsp; <span class="price_big">17</span>,000</h4>
+                    <div class="hr"></div>
+                    <div class="benefit">
+                        <ul class="uk-list on_box">
+                            <li>
+                                <a class="uk-link-text" href="#">기업 열람<span class="plus uk-text-bolder">+</span></a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    기업의 더 자세한 정보 열람
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">박람회·사업설명회 자동캘린더</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    <span class="bold"><span class="-yellow">관심있는</span> 박람회 사업설명회</span> 등록시, <br>
+                                    자동으로 월별 캘린더에 저장
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-link-text" href="#">e-뉴스레터</a>
+                                <div class="detail" uk-dropdown="mode: click">
+                                    회원가입시 입력한 이메일로 e-뉴스레터 발송
+                                    <br><span class="uk-text-meta">(마케팅 수신 동의 체크시 한정)</span>
+                                </div>
+                            </li>
+                            <div style="height:283px;"></div>
+                        </ul>
+                    </div>
+                    <div class="hr"></div>
+                    <button class="uk-button uk-button-primary" onclick="buy_plan('General')">Buy now</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FOOTER -->
+        <div id="footer" class="-frame ">
+            <div class="footer_menu">
+
+            </div>
+
+
+            <div class="call_center _section">
+                <h4>CUSTOMER CENTER</h4>
+                <p class="h4_line"></p>
+                <ul class="xans-element- xans-layout xans-layout-footer ">
+                    <li class="phone">1544-0023
+                        <span style="font-size:11px;">묻지도 따지지도않는 번호</span></li>
+                    <!-- 상점관리 > 기본정보관리 > 내쇼핑몰 정보에 기재하신 전화번호가 자동으로 노출됩니다. 직접 넣으셔도 됩니다. -->
+                    <!-- 운영시간을 기재해주세요 -->
+                    <li>
+                        <span>평일</span> 10:00 AM ~ 05:00 PM</li>
+                    <li>
+                        <span>점심</span> 12:00 PM ~ 01:00 PM</li>
+                    <li>
+                        <span>휴무</span> 토·일·공휴일 OFF</li>
+                    <!-- //운영시간을 기재해주세요 -->
+                </ul>
+            </div>
+
+            <!-- 은행정보 -->
+            <div class="bank_account _section">
+                <h4>BANK INFO</h4>
+                <p class="h4_line"></p>
+                <ul>
+                    <!-- 해당 부분만 수정해주세요. -->
+                    <li>
+                        <span>기업은행</span> 111-111111-11-111</li>
+                    <li>
+                        <span>예금주</span> ㈜식회사</li>
+                    <!-- //해당 부분만 수정해주세요. -->
+
+                </ul>
+            </div>
+
+            <!-- 회사정보 -->
+            <div class="footer_info">
+                <!-- 회사정보는 상점관리 > 기본정보관리 > 내쇼핑몰 정보에 기재하신 내용이 자동으로 출력됩니다. -->
+                <h4>COMPANY INFO</h4>
+                <p class="h4_line"></p>
+                <ul>
+                    <li>
+                        <span>회사명</span> ㈜식회사 &nbsp;&nbsp;&nbsp; <span>대표</span> 김대현 &nbsp;&nbsp;&nbsp;
+                        <span>대표전화</span> <strong>070-5001-4281</strong>
+                    </li>
+                    <li>
+                        <span>주소</span> 서울특별시 서초구 서초대로73길 9 지하 1층 (서초동) 공존라운지 7번룸</li>
+                    <li>
+                        <span>사업자 등록번호</span> 123-45-78910 &nbsp;&nbsp;&nbsp; <span>통신판매업 미신고</span> 서울중랑제2020-0409호
+                        <strong><a href="#none"
+                                onclick="window.open('http://www.naver.com', 'bizCommPop', 'width=750, height=950;');return false;">[사업자정보확인]</a></strong>
+                    </li>
+                    <li>
+                        <span>개인정보관리책임자</span> <a href="mailto:ezen@ezeni.co.kr">김대현 ( league@lol.co.kr )</a>
+                    </li>
+                    <!-- <li><span>호스팅제공</span>  심플렉스인터넷㈜</li> -->
+                </ul>
+            </div>
+            <div class="divClear"></div>
+
+            <div class="_line"></div>
+
+            <!-- 반품주소지안내 -->
+            <div class="footer_return DB_navi30_5">
+                <h4>RETRUN &amp; EXCHANGE</h4>
+                <p class="h4_line"></p>
+                <ul>
+                    <li>
+                        <strong>반품배송지</strong> 서울특별시 서초구 서초대로73길 9 지하 1층 (서초동) 공존라운지 7번룸 / Tel. 02-1577-0200 (지정택배 :
+                        CJ대한통운택배)
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="divClear"></div>
+
+
+        </div>
+        <div class="footer_end ">
+            <div class="footer_end_inner -frame">
+                <p class="copyright">COPYRIGHT © 2020 <strong>마이돌스</strong>. ALL RIGHTS RESERVED.</p>
+
+            </div>
+        </div>
+</body>
+
+</html>

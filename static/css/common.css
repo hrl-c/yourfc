@@ -1,10 +1,15 @@
+html {
+    overflow: auto;
+}
 body {
     font-family: "-apple-system,BlinkMacSystemFont", sans-serif !important;
   }
   
   body {
-      width: 1910px;
+      width: 100%;
+      margin: 0 auto;
       color: #333;
+      min-width: 1200px;
   }
   .header {
       width: 100%;
@@ -63,14 +68,14 @@ body {
       display: block;
       margin: 0 auto;
   }
-  .search {
-      margin: 0 !important;
-      display: block;
+  #search {
+     width: 300px;
   }
+  /*
   .uk-search-default {
       width: 350px;
   }
-  
+  */
   /*=============== NAV */
   .-frame {
       width: 1200px;
@@ -79,6 +84,17 @@ body {
   .-top_control {
       top:40px !important;
   }
+  .uk-navbar-nav> li {
+      min-width: 190px;
+  }
+  .uk-navbar-nav>li:first-child {
+    width: 40px !important;
+    min-width:40px !important;
+}
+.uk-navbar-nav>li:first-child>a {
+    padding: 0 80px 0 20px;
+    width: 40px;
+}
   .uk-navbar-dropdown-nav>li>a {
       color: #666;
   }
@@ -94,6 +110,8 @@ body {
       border-top: 1px solid black;
       border-bottom: 1px solid #f8f8f8f8;
       height: 60PX !important;
+      width: 100%;
+      min-width: 1200px;
   }
   .uk-navbar-nav>li>a {
       min-height: 60px;
@@ -110,7 +128,7 @@ body {
       padding-left: 30px;
   }
   .vip {
-      color: blueviolet;
+      color: #ff6363;
   }
   a:link {
       text-decoration: none;

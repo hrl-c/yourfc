@@ -1,0 +1,203 @@
+{% extends 'layout.html' %}
+
+{% block contents %}
+
+<div class="search_brand -frame">
+    <div class="search_options ui grid">
+        <div class="-first" id="sival">
+            <form class="select_for_brand">
+                <label for="big_sort">대분류</label>
+                <select class="uk-select uk-width-medium" id="big_sort">
+                    <option value="unselected" selected>업종을 선택해주세요</option>
+                    <option value="1">외식업</option>
+                    <option value="2">도·소매업</option>
+                    <option value="3">서비스업</option>
+                </select>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <label for="small_sort">소분류</label></span>
+                <select class="uk-select uk-width-medium" id="small_sort0">
+                    <option value="unselected">대분류를 선택해주세요.</option>
+                </select>
+                <select class="uk-select uk-width-medium" id="small_sort1" style="display:none;">
+                    <option value="unselected">&nbsp;&nbsp;요식업</option>
+                    <option>제과제빵</option>
+                    <option>아이스크림/빙수</option>
+                    <option>커피</option>
+                    <option>음료(커피 외)</option>
+                    <option>주점</option>
+                    <option>기타 외식</option>
+                    <option>한식</option>
+                    <option>분식</option>
+                    <option>중식</option>
+                    <option>일식</option>
+                    <option>서양식</option>
+                    <option>기타 외국식</option>
+                    <option>패스트푸드</option>
+                    <option>치킨</option>
+                    <option>피자</option>
+                </select>
+                <select class="uk-select uk-width-medium" id="small_sort2" style="display:none;">
+                    <option value="unselected">&nbsp;&nbsp;도·소매업</option>
+                    <option>편의점</option>
+                    <option>의류·패션</option>
+                    <option>화장품</option>
+                    <option>농수산물</option>
+                    <option>건강(식품)</option>
+                    <option>종합소매점</option>
+                    <option>기타 도소매</option>
+                </select>
+                <select class="uk-select uk-width-medium" id="small_sort3" style="display:none;">
+                    <option value="unselected">&nbsp;&nbsp;서비스업</option>
+                    <option>기타 서비스</option>
+                    <option>기타 인력파션</option>
+                    <option>약국</option>
+                    <option>반려동물 관련</option>
+                    <option>운속</option>
+                    <option>이사</option>
+                    <option>세탁</option>
+                    <option>안경</option>
+                    <option>배달</option>
+                    <option>기타 교육</option>
+                    <option>교육(외국어)</option>
+                    <option>교육(교과)</option>
+                    <option>PC방</option>
+                    <option>자동차 관련</option>
+                    <option>미용</option>
+                    <option>스포츠 관련</option>
+                    <option>숙박</option>
+                    <option>임대</option>
+                    <option>부동산중개</option>
+                    <option>유아 관련(교육 외)</option>
+                </select>
+                <br>
+                <div class="label_box -l1st">
+                    <label for="year" >업력</label>
+                    <select class="uk-select uk-width-small form_2nd" id="year">
+                        <option value="unselected" selected>n년차 기업</option>
+                        <option value="new">신규</option>
+                        <option value="middle">1~5년</option>
+                        <option value="old">6년 이상</option>
+                    </select>
+                </div>
+                <div class="label_box">
+                    <label for="year" >창업자금</label>
+                    <select class="uk-select uk-width-small form_2nd" id="money">
+                        <option value="unselected" selected>창업자금</option>
+                        <option value="money1">5천 이하</option>
+                        <option value="money2">5천 ~ 1억</option>
+                        <option value="money3">1억 ~ 2억</option>
+                        <option value="money4">2억 ~ 3억</option>
+                        <option value="money5">3억 이상</option>
+                    </select>
+                </div>
+                <div class="label_box">
+                    <label for="year" >가맹점 수</label>
+                    <select class="uk-select uk-width-small form_2nd" id="stores">
+                        <option value="unselected" selected>가맹점 수</option>
+                        <option value="little">30개 이하</option>
+                        <option value="many">30 ~ 100개</option>
+                        <option value="too_many">100개 ~ 500개</option>
+                    </select>
+                </div>
+                <input type="submit" class="uk-button uk-button-primary -submit" value="검색하기">
+            </form>
+        </div>
+        <div class="-second" id="sival">
+            핫테드
+        </div>
+    </div>
+    <table class="uk-table uk-table-hover uk-table-divider search_brand_table">
+        <thead>
+            <tr>
+                <th>영업표지</th>
+                <th>상호</th>
+                <th>대분류</th>
+                <th>중분류</th>
+                <th class="-center">가맹점수</th>
+                <th class="-right">창업비용</th>
+                <th class="-right">평균매출액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="#1">
+                        젠요가
+                    </a>
+                </td>
+                <td>
+                    <a href="#1">
+                        (주)젠요가
+                    </a>
+                </td>
+                <td>
+                    <a href="#1" class="big_sort">
+                        서비스
+                    </a>
+                </td>
+                <td>
+                    <a href="#1">
+                        기타 서비스
+                    </a>
+                </td>
+                <td class="-center">
+                    <a href="#1">
+                        8
+                    </a>
+                </td>
+                <td class="-right">
+                    <a href="#1">
+                        3억 5000 만
+                    </a>
+                </td>
+                <td class="-right">
+                    <a href="#1">
+                        3억 5600 만
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#1">
+                        긱스피자
+                    </a>
+                </td>
+                <td>
+                    <a href="#1">
+                        (주)긱스에프앤비
+                    </a>
+                </td>
+                <td>
+                    <a href="#1" class="big_sort">
+                        요식업
+                    </a>
+                </td>
+                <td>
+                    <a href="#1">
+                        피자
+                    </a>
+                </td>
+                <td class="-center">
+                    <a href="#1">
+                        15
+                    </a>
+                </td>
+                <td class="-right">
+                    <a href="#1">
+                        6755 만
+                    </a>
+                </td>
+                <td class="-right">
+                    <a href="#1">
+                        3억 2760 만
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+{% endblock %}

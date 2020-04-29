@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='./css/common.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='./css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='./css/search_brand.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/vip_plan.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/login.css') }}">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/js/uikit.min.js"></script>
@@ -16,6 +18,8 @@
     <script src="{{ url_for('static', filename='./js/uikit-icons.min.js') }}"></script>
     <script src="{{ url_for('static', filename='./js/common.js') }}"></script>
     <script src="{{ url_for('static', filename='./js/search_brand.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/vip_plan.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/login.js') }}"></script>
     <title>당신의 프랜차이즈</title>
     <script>
 
@@ -28,7 +32,7 @@
         <div class="header">
             <div class="util_bar -frame">
                 <ul class="util uk-list uk-link-text">
-                    <li><a href="#">로그인</a></li>
+                    <li><a href="/login">로그인</a></li>
                     <div class="ver_line"></div>
                     <li><a href="#">회원가입</a></li>
                     <div class="ver_line"></div>
@@ -45,7 +49,7 @@
                 </a>
                 <div class="search uk-margin right_in_nav">
                     <form class="uk-search uk-search-default">
-                        <span class="uk-search-icon-flip" uk-search-icon></span>
+                        <button onclick="" class="uk-search-icon-flip" uk-search-icon></button>
                         <input class="uk-search-input" type="search" placeholder="상호명 검색">
                     </form>
                 </div>
@@ -61,9 +65,9 @@
                                 <div class="uk-navbar-dropdown-grid uk-child-width-1-5 -frame" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li class="uk-active"><a href="#">브랜드 검색</a></li>
+                                            <li class="uk-active"><a href="/search_brand">브랜드 검색</a></li>
                                             <li>&nbsp;</li>
-                                            <li><a href="#">전체 브랜드</a></li>
+                                            <li><a href="/search_brand">전체 브랜드</a></li>
                                             <li><a href="#">요식업</a></li>
                                             <li><a href="#">서비스업</a></li>
                                             <li><a href="#">도·소매업</a></li>
@@ -128,10 +132,10 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#">브랜드 검색</a>
+                            <a href="/search_brand">브랜드 검색</a>
                             <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">전체 브랜드</a></li>
+                                    <li><a href="/search_brand">전체 브랜드</a></li>
                                     <li class="uk-nav-header_sub"><a href="#">요식업</a></li>
                                     <li><a href="#">서비스업</a></li>
                                     <li><a href="#">도·소매업</a></li>

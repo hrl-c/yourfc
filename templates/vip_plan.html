@@ -1,0 +1,152 @@
+{% extends 'layout.html' %}
+
+{% block contents %}
+<div class="contents_vip_plan -frame">
+    <h1 class="title">YOUR FranChise <span class="letter-vip">VIP</span> PALN</h1>
+    <div class="plan_boxs">
+        <div class="plan_box">
+            <h1 class="vvip_title">VVIP</h1>
+            <h4> &nbsp;&nbsp;&nbsp; <span class="price_big">38</span>,000</h4>
+            <div class="hr"></div>
+            <div class="benefit">
+                <ul class="uk-list on_box">
+                    <li>
+                        <a class="uk-link-text" href="#">기업 열람<span class="plus uk-text-bolder">+</span></a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            기업의 더 자세한 정보 열람
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">박람회·사업설명회 자동캘린더</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            <span class="bold"><span class="-yellow">관심있는</span> 박람회 사업설명회</span> 등록시, <br>
+                            자동으로 월별 캘린더에 저장
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">e-뉴스레터</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            회원가입시 입력한 이메일로 e-뉴스레터 발송
+                            <br><span class="uk-text-meta">(마케팅 수신 동의 체크시 한정)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">제휴박람회 부분할인</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            SETEC는 무료! <br>
+                            COEX · IFS 제휴 박람회 <span class="bold">최대 60% 할인</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">관심업체의 박람회 참여여부 <br>자동조회</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            <span class="bold -yellow">즐겨찾기</span> 되어있는 업체가 <br>
+                            해당 <span class="bold">박람회에 참여하는지 </span>자동으로 조회 후 알림
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">Setec Free Pass</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            <span class="bold">SETEC개최 모든 프랜차이즈 박람회 무료</span>
+                        </div>
+                    </li>
+                    <li>
+
+                        <a class="uk-link-text" href="#">본사발행 팜플렛·정보지 <br>우편배송</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            가맹본사에서 발행하는 인쇄물을 <br><span class="bold">자택·회사 주소지로 배송</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">일정 알림</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            스케쥴이 있는 날 며칠전부터 <br> <span class="bold">카카오톡, 문자</span>로 일정을 알려주는 기능
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="hr"></div>
+            <button class="uk-button uk-button-primary" onclick="buy_plan('VVIP')">Buy now</button>
+        </div>
+        <div class="plan_box">
+            <h1 class="vip_title">VIP</h1>
+            <h4> &nbsp;&nbsp;&nbsp; <span class="price_big">29</span>,000</h4>
+            <div class="hr"></div>
+            <div class="benefit">
+                <ul class="uk-list on_box">
+                    <li>
+                        <a class="uk-link-text" href="#">기업 열람<span class="plus uk-text-bolder">+</span></a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            기업의 더 자세한 정보 열람
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">박람회·사업설명회 자동캘린더</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            <span class="bold"><span class="-yellow">관심있는</span> 박람회 사업설명회</span> 등록시, <br>
+                            자동으로 월별 캘린더에 저장
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">e-뉴스레터</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            회원가입시 입력한 이메일로 e-뉴스레터 발송
+                            <br><span class="uk-text-meta">(마케팅 수신 동의 체크시 한정)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">제휴박람회 부분할인</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            SETEC는 무료! <br>
+                            COEX · IFS 제휴 박람회 <span class="bold">최대 60% 할인</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">관심업체의 박람회 참여여부 <br>자동조회</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            <span class="bold -yellow">즐겨찾기</span> 되어있는 업체가 <br>
+                            해당 <span class="bold">박람회에 참여하는지 </span>자동으로 조회 후 알림
+                        </div>
+                    </li>
+                    <div style="height:165px;"></div>
+                </ul>
+            </div>
+            <div class="hr"></div>
+            <button class="uk-button uk-button-primary" onclick="buy_plan('VIP')">Buy now</button>
+        </div>
+        <div class="plan_box">
+            <h1 class="general_title">General</h1>
+            <h4> &nbsp;&nbsp;&nbsp; <span class="price_big">17</span>,000</h4>
+            <div class="hr"></div>
+            <div class="benefit">
+                <ul class="uk-list on_box">
+                    <li>
+                        <a class="uk-link-text" href="#">기업 열람<span class="plus uk-text-bolder">+</span></a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            기업의 더 자세한 정보 열람
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">박람회·사업설명회 자동캘린더</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            <span class="bold"><span class="-yellow">관심있는</span> 박람회 사업설명회</span> 등록시, <br>
+                            자동으로 월별 캘린더에 저장
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-link-text" href="#">e-뉴스레터</a>
+                        <div class="detail" uk-dropdown="mode: click">
+                            회원가입시 입력한 이메일로 e-뉴스레터 발송
+                            <br><span class="uk-text-meta">(마케팅 수신 동의 체크시 한정)</span>
+                        </div>
+                    </li>
+                    <div style="height:283px;"></div>
+                </ul>
+            </div>
+            <div class="hr"></div>
+            <button class="uk-button uk-button-primary" onclick="buy_plan('General')">Buy now</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

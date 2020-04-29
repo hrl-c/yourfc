@@ -1,0 +1,39 @@
+
+.contents_login {
+    width: 800px;
+    margin: 40px auto;
+}
+.-height {
+    height: 400px;
+}
+.-title_login {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.9rem;
+}
+.form_login {
+    text-align: center;
+}
+button.uk-button {
+    margin-top: 10px;
+}
+.bigger {
+    font-size: 16px;
+}
+
+.hr {
+    margin: 30px auto 5px;
+    border-top: 1px solid #e5e5e5;
+}
+.help_util {
+    margin: 0 auto;
+    text-align: center;
+}
+.help_util>ul {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.help_util>ul>li:first-child {
+    padding-left: 0;
+}

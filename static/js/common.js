@@ -9,7 +9,7 @@ $(function(){
         $('#news_tag>ul>li').eq(nth).addClass('uk-active');
         num = nth;
     })
-    console.log(6);
+    // console.log(6);
     
     var num2 = 0;
     $('#cp_tag>ul>li').on('click', function() {
@@ -20,7 +20,7 @@ $(function(){
         $('#cp_tag>ul>li').eq(nth2).addClass('uk-active');
         num2 = nth2;
     })
-    console.log(6);
+    // console.log(6);
 
 
 /*
@@ -39,3 +39,34 @@ $('#fuxk').on('click', function() {
 console.log('end')
 */
 });
+
+function first() {
+    var first_one = [
+        {
+            'id' : 'test01',
+            'password':'test10'
+        }
+        ,
+        {
+            'id' : 'test02',
+            'password':'test20'
+        }
+        ,
+        {
+            'id' : 'test03',
+            'password':'test30'
+        }
+    ]
+    console.log(first_one)
+    $.ajax({
+        type: "POST",
+        url: "/first",
+        dataType: 'json',
+        data: JSON.stringify(first_one),
+        success: function (response) { // 성공하면
+            if (response['result'] == 'success') {
+                alert(response['msg']);
+            }
+        }
+    })
+}
