@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block contents %}
+
+ <div class="contents_signup">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h4 class="uk-card-title -title_signup">회원가입</h4>
+                <form class="form_signup">
+                    <div class="signup_row">
+                        <h3 class="signup_title">
+                            <label for="id">아이디</label>
+                        </h3>
+                        <input type="text" id="id" class="uk-input -size_control">
+                    </div>
+                    <div class="signup_row">
+                        <h3 class="signup_title">
+                            <label for="password">비밀번호</label>
+                        </h3>
+                        <input type="password" id="password" class="uk-input -size_control">
+                    </div>
+                    <div class="signup_row">
+                        <h3 class="signup_title">
+                            <label for="password_check">비밀번호 재확인
+                                <span class="-small_signup -red -none"> &nbsp; 비밀번호와 일치하지 않습니다.</span>
+                            </label>
+                        </h3>
+                        <input type="password" id="password_check" class="uk-input for_check -size_control">
+                    </div>
+                    <br>
+                    <div class="signup_row">
+                        <h3 class="signup_title">
+                            <label for="name">이름</label>
+                        </h3>
+                        <input type="text" id="name" class="uk-input -size_control">
+                    </div>
+                    <div class="signup_row">
+                        <h3 class="signup_title">
+                            <label for="yymmdd">생년월일</label>
+                        </h3>
+                        <input type="text" id="yymmdd" class="uk-input -size_control">
+                    </div>
+                    <div class="signup_row">
+                        <h3 class="signup_title">
+                            <label for="gender">성별</label>
+                        </h3>
+                        <select class="uk-select -size_control" id="gender">
+                            <option value="unselected" selected>성별</option>
+                            <option value="male">남자</option>
+                            <option value="female">여자</option>
+                        </select>
+                    </div>
+                    <div class="signup_row">
+                        <h3 class="signup_title">
+                            <label for="email">이메일 
+                                <span class="-small_signup">(뉴스레터·본인확인 시 사용)</span>
+                            </label>
+                        </h3>
+                        <input type="text" id="email" class="uk-input -size_control">
+                    </div>
+                    <div class="signup_row">
+                        <h3 class="signup_title">
+                            <label for="phone">휴대전화</label>
+                        </h3>
+                        <input type="number" id="phone" class="uk-input -size_control">
+                    </div>
+                    <br><br>
+                    <div class="signup_row">
+                        <button onclick="signup()" class="uk-button uk-button-primary -size_control">가입하기</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+{% endblock %}

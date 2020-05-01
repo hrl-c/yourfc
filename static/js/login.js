@@ -33,6 +33,8 @@ function try_login(id, pw) {
         success: function (response) { // 성공하면
             if (response['result'] == 'success') {
                 alert(response['msg']);
+            } else {
+                console.log(response);
             }
         }
     })

@@ -60,7 +60,7 @@ th {
 .-l1st {
     padding-left: 0px;
 }
-label{
+.select_for_brand>label{
     font-weight:600;
     color: #666;
     display: inline-block;

@@ -41,7 +41,8 @@ console.log('end')
 });
 
 function first() {
-    var first_one = [
+    
+    var first = [
         {
             'id' : 'test01',
             'password':'test10'
@@ -57,12 +58,15 @@ function first() {
             'password':'test30'
         }
     ]
+    /*
+    var first=[{'id':'test01', 'password':'test10'}, {'id':'test02','password':'test20'}];
+   */
+    var first_one = JSON.stringify(first);
     console.log(first_one)
     $.ajax({
         type: "POST",
         url: "/first",
-        dataType: 'json',
-        data: JSON.stringify(first_one),
+        data: {'first_give' : first_one},
         success: function (response) { // 성공하면
             if (response['result'] == 'success') {
                 alert(response['msg']);
