@@ -1,7 +1,51 @@
 $(function () {
 
     /*========== signup_terms.html*/
-    
+
+    $('input[name="terms_service"]').click(function () {
+        console.log('here')
+        if ($(this).attr('id') == 'check_all') {
+            var chk = $(this).is(":checked");//.attr('checked');
+            if (chk) {
+                $("#box_1").prop('checked', true);
+                $("#box_2").prop('checked', true);
+            }
+            else {
+                $("#box_1").prop('checked', false);
+                $("#box_2").prop('checked', false);
+            }
+        } else {
+            var chk = $(this).is(":checked");//.attr('checked');
+            if (!chk) {
+                $("#check_all").prop('checked', false);
+            } else if ( $("#box_1").is(":checked") && $("#box_2").is(":checked") ){
+                $("#check_all").prop('checked', true);
+
+            }
+        }
+    })
+
+    $("#check_all").click(function () {
+        var chk = $(this).is(":checked");//.attr('checked');
+        if (chk) {
+            $("#box_1").prop('checked', true);
+            $("#box_2").prop('checked', true);
+        }
+        else {
+            $("#box_1").prop('checked', false);
+            $("#box_2").prop('checked', false);
+        }
+    });
+
+    $('#box_1').click(function () {
+        var unchk = $('#box_1').is(':checked', true)
+        if (!unchk) $('#check_all').prop('checked', false)
+    })
+    $('#box_2').click(function () {
+        var unchk = $('#box_2').is(':checked', true)
+        if (!unchk) $('#check_all').prop('checked', false)
+    })
+
     /*========== signup.html*/
     $('#password_check').on('mouseleave focusout', function () {
         let pw = $('#password').val();
@@ -34,6 +78,18 @@ $(function () {
 })
 
 
+/* ================ signup_terms.html */
+var checked_terms = 0
+function check_terms() {
+    var box_all = $('#box_all').val();
+    var box_all = $('#box_1').val();
+    var box_all = $('#box_2').val();
+    console.log(box_all + ' | ')
+    console.log(box_1 + ' | ')
+    console.log(box_2)
+}
+
+/* ================ signup.html */
 function red_show() {
     if ($('.-red').hasClass('-none')) {
         console.log(1);

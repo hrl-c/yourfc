@@ -1,7 +1,30 @@
 $(function () {
 
     /*========== signup_terms.html*/
-    
+
+    $('input[name="terms_service"]').click(function () {
+        console.log('here')
+        if ($(this).attr('id') == 'check_all') {
+            var chk = $(this).is(":checked");//.attr('checked');
+            if (chk) {
+                $("#box_1").prop('checked', true);
+                $("#box_2").prop('checked', true);
+            }
+            else {
+                $("#box_1").prop('checked', false);
+                $("#box_2").prop('checked', false);
+            }
+        } else {
+            var chk = $(this).is(":checked");//.attr('checked');
+            if (!chk) {
+                $("#check_all").prop('checked', false);
+            } else if ($("#box_1").is(":checked") && $("#box_2").is(":checked")) {
+                $("#check_all").prop('checked', true);
+
+            }
+        }
+    })
+
     /*========== signup.html*/
     $('#password_check').on('mouseleave focusout', function () {
         let pw = $('#password').val();
@@ -33,7 +56,16 @@ $(function () {
     })
 })
 
-
+/* ================ signup_terms.html */
+function check_terms() {
+    console.log('1')
+    if ($("#box_1").is(":checked") && $("#box_2").is(":checked")) {
+        location.href = "/signup";
+    } else {
+        alert('no')
+    }
+}
+/* ================ signup.html */
 function red_show() {
     if ($('.-red').hasClass('-none')) {
         console.log(1);
