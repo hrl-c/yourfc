@@ -5,12 +5,12 @@
     <div class="uk-card uk-card-default uk-card-body">
         <h4 class="uk-card-title -title_signup">회원가입</h4>
         <div class="title_box">
-            <input type="checkbox" class="uk-checkbox" name="terms_service" class="unchecked" id="box_all">
+            <input type="checkbox" class="uk-checkbox" name="terms_service" id="check_all">
 
             &nbsp;<p class="terms_title terms_title_first">이용약관, 개인정보 수집 및 이용에 모두 동의합니다.</p>
         </div>
         <div class="title_box">
-            <input type="checkbox" class="uk-checkbox" name="terms_service" class="unchecked" id="box_1">
+            <input type="checkbox" class="uk-checkbox" name="terms_service" id="box_1">
 
             &nbsp;<p class="terms_title">회원가입 약관<span class="-small">&nbsp;(필수)</span></p>
         </div>
@@ -147,7 +147,7 @@
                 </div>
                 </div>
                 <div class="title_box">
-                    <input type="checkbox" class="uk-checkbox" name="terms_service" class="unchecked" id="box_2">
+                    <input type="checkbox" class="uk-checkbox" name="terms_service" id="box_2">
 
                     &nbsp;<p class="terms_title">개인정보 수집및 이용에 대한 안내<span class="-small">&nbsp;(필수)</span></p>
                 </div>
@@ -317,7 +317,7 @@
         </div>
 
         <div class="hr uk-width-1-2"></div>
-        <a class="uk-button uk-button-primary uk-width-1-4" href="/signup">회원가입</a>
+        <button onclick="check_terms()" class="uk-button uk-button-primary uk-width-1-4 -white -float_right" >다음</button>
     </div>
 </div>
 

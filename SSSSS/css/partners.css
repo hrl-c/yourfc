@@ -2,7 +2,22 @@
     width: 900px;
     margin: 0 auto;
 }
+.inner_partners {
+    width: 400px;
+    margin: 20px auto !important;
+}
 .-for_br {
     padding: 0 !important;
     margin:0 !important;
+}
+.second_filter {
+    display: none;
+}
+.uk-subnav-pill>.hr-active>a {
+    background-color: #1e87f0;
+    color: #fff;
+}
+.contents_partners hr {
+    width: 70% ;
+    margin: 30px auto;
 }

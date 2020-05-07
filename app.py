@@ -44,6 +44,7 @@ def goToSignup_terms():
 
 @app.route('/signup', methods=['GET'])
 def goToSignup():
+    print('3')
     return render_template('signup.html')
 
 @app.route('/login', methods=['POST'])
@@ -72,4 +73,4 @@ def login():
 
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=5000,  debug=True)
+    app.run('127.0.0.1', port=1014,  debug=True)
