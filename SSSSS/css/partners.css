@@ -1,5 +1,5 @@
 .contents_partners {
-    width: 900px;
+    width: 1300px;
     margin: 0 auto;
 }
 .inner_partners {
@@ -20,4 +20,40 @@
 .contents_partners hr {
     width: 70% ;
     margin: 30px auto;
+}
+
+/* 카드 관련 css */
+.card_details  {
+    margin-top: 10px;
+    font-weight: 500;
+}
+.card_details > p {
+    width: 250px;
+    margin: 5px 0;
+    position: relative;
+    text-align: initial;
+    color: #666;
+}
+.card_details > p > span {
+    padding: 0 7px;
+}
+.pts_card_title {
+    font-weight: 600;
+}
+.pts_card_local {
+    position: absolute;
+    right: 10px;
+}
+.pts_card_sort_big {
+    padding-right: 0 !important;
+}
+.pts_card_sort_small {
+    padding-left: 0 !important;
+}
+.pts_card_hashtag {
+    
+    font-size: 12px;
+}
+.card_details > p > button {
+    text-align: right;
 }
