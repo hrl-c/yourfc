@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/css/uikit.min.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/js/uikit.min.js"></script>
+    <script src="../js/uikit.min.js"></script>
+    <script src="../js/uikit-icons.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/mypage.js"></script>
+    <title>당신의 프랜차이즈</title>
+</head>
+
+<body>
+    <div class='wrap'>
+        <!-- 해드 (로고, 로그인 회원가입 장바구니 마이페이지 등)-->
+        <div class="header">
+            <div class="util_bar -frame">
+                <ul class="util uk-list uk-link-text">
+                    <li><a href="./login.html">로그인</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href="#">회원가입</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href="#">마이페이지</a></li>
+                    <div class="ver_line"></div>
+                    <li><a href="./vip_plan.html">
+                            <span class="vip">VIP</span>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="logo -frame">
+                <a href="./home.html">
+                    <img src="../images/logo_2.png">
+                </a>
+                <div class="search uk-margin right_in_nav">
+                    <form class="uk-search uk-search-default">
+                        <button onclick="" class="uk-search-icon-flip" uk-search-icon></button>
+                        <input class="uk-search-input" type="search" placeholder="상호명 검색">
+                    </form>
+                </div>
+            </div>
+            <nav class="uk-navbar-container my_nav" uk-navbar>
+                <div class="uk-navbar-left -frame">
+                    <ul class="uk-navbar-nav">
+
+                        <li>
+                            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
+                            <div class="uk-navbar-dropdown -frame"
+                                uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify; delay-hide: 0;">
+                                <div class="uk-navbar-dropdown-grid uk-child-width-1-5 -frame" uk-grid>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="./search_brand.html">브랜드 검색</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="./search_brand.html">전체 브랜드</a></li>
+                                            <li><a href="#">요식업</a></li>
+                                            <li><a href="#">서비스업</a></li>
+                                            <li><a href="#">도·소매업</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업 박람회</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#">COEX</a></li>
+                                            <li><a href="#">SETEC</a></li>
+                                            <li><a href="#">IFC</a></li>
+                                            <li><a href="#">매장기기전문</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업 파트너즈</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">인테리어</a></li>
+                                            <li><a href="#">간판</a></li>
+                                            <li><a href="#">가구</a></li>
+                                            <li><a href="#">디자인</a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">주방</a></li>
+                                            <li><a href="#">POS</a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#">세무사</a></li>
+                                            <li><a href="#">노무사</a></li>
+                                            <li><a href="#">보험</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">창업뉴스</a></li>
+                                            <li>&nbsp;</li>
+                                            <li><a href="#">창업지원</a></li>
+                                            <li><a href="#">창업교육</a></li>
+                                            <li><a href="#">시설·공간</a></li>
+                                            <li><a href="#">엑셀러레이팅</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">내 주위 프랜차이즈</a></li>
+                                            <li>&nbsp;</li>
+
+                                            <li class="uk-active"><a
+                                                    href="https://franchise.ftc.go.kr/main/subIndex/23.do">
+                                                    가맹사업 <span style="color:coral">주요</span> 정보</a></li>
+                                            <li>&nbsp;</li>
+
+                                            <li class="uk-active"><a href="http://www.ikfa.or.kr/">
+                                                    한국 프랜차이즈협회 바로가기</a></li>
+                                            <li>&nbsp;</li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="./search_brand.html">브랜드 검색</a>
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="./search_brand.html">전체 브랜드</a></li>
+                                    <li class="uk-nav-header_sub"><a href="#">요식업</a></li>
+                                    <li><a href="#">서비스업</a></li>
+                                    <li><a href="#">도·소매업</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업 박람회</a>
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">COEX</a></li>
+                                    <li><a href="#">SETEC</a></li>
+                                    <li><a href="#">IFC</a></li>
+                                    <li class="uk-nav-header_sub"><a href="#">매장기기전문</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업 파트너즈</a>
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li class="uk-nav-header -bold"><a href="#">인테리어 파트너즈</a></li>
+                                    <li><a href="#">인테리어</a></li>
+                                    <li><a href="#">간판</a></li>
+                                    <li><a href="#">가구</a></li>
+                                    <li><a href="#">디자인</a></li>
+                                    <li class="uk-nav-header -bold"><a href="#">매장기기 파트너즈</a></li>
+                                    <li><a href="#">주방</a></li>
+                                    <li><a href="#">POS</a></li>
+                                    <li class="uk-nav-header -bold"><a href="#">법률 파트너즈</a></li>
+                                    <li><a href="#">세무사</a></li>
+                                    <li><a href="#">노무사</a></li>
+                                    <li><a href="#">보험</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">창업뉴스</a>
+                            <div class="uk-navbar-dropdown -top_control" uk-dropdown="delay-hide: 100;">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">창업지원</a></li>
+                                    <li><a href="#">창업교육</a></li>
+                                    <li><a href="#">시설·공간</a></li>
+                                    <li><a href="#">엑셀러레이팅</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="uk-active">
+                            <a href="#">내 주위 프랜차이즈</a>
+                        </li>
+                        <li class="uk-active little_right">
+                            <a href="./vip_plan.html"><span class="vip">VIP</span> &nbsp;서비스 바로가기</a>
+                        </li>
+                </div>
+            </nav>
+        </div>
+
+
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer ">
+                <div class="for_border">
+                    <div class="top_line -frame">
+                        <span class="in_footer">
+                            <a href="#">
+                                회사소개
+                            </a>
+                        </span>
+                        <span class="in_footer">
+                            <a href="#">
+                                이용약관
+                            </a>
+                        </span>
+                        <span class="in_footer">
+                            <a href="#">
+                                개인정보보호정책
+                            </a>
+                        </span>
+                        <span class="in_footer">
+                            <a href="#modal-open_license" uk-toggle>
+                                오픈라이선스
+                            </a>
+                            <div id="modal-open_license" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">오픈라이선스</h2>
+                                    <p style="font-size: 20px;">- UIKIT</p>
+                                    <p>
+                                        Copyright (c) 2013-2020 YOOtheme GmbH, getuikit.com
+                                        <br><br>
+                                        Permission is hereby granted, free of charge, to any person obtaining a copy of
+                                        this software and associated documentation files (the "Software"), to deal in
+                                        the Software without restriction, including without limitation the rights to
+                                        use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+                                        the Software, and to permit persons to whom the Software is furnished to do so,
+                                        subject to the following conditions:
+                                        <br><br>
+                                        The above copyright notice and this permission notice shall be included in all
+                                        copies or substantial portions of the Software.
+                                        <br><br>
+                                        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                                        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+                                        FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+                                        COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+                                        IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+                                        CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                                    </p>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close"
+                                            type="button">닫기</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="main_boxes -frame">
+                    <table class="uk-table">
+                        <tr>
+                            <td>
+                                <div class="inner_main_box">
+                                    <h4>C<span class="-small_cap">ompany</span> Info</h4>
+                                    ㈜ 당신의프랜차이즈
+                                    <table>
+                                        <tr>
+                                            <td>대표</td>
+                                            <td>| &nbsp;&nbsp;홍길동</td>
+                                        </tr>
+                                        <tr>
+                                            <td>사업자등록번호</td>
+                                            <td>| &nbsp;&nbsp;18181818</td>
+                                        </tr>
+                                        <tr>
+                                            <td>통신판매업 신고</td>
+                                            <td>| &nbsp;&nbsp;18181818</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_main_box">
+                                    <h4>C<span class="-small_cap">ontact us</span></h4>
+                                    불만사항 접수 <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;help@yourfc.com<br><br><br>
+                                    제휴제안<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;contact@yourfc.com
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer-end">
+                    <div class="-frame">
+                        copyright © 2020 당신의프랜차이즈. ALL RIGHT RESERVED.
+                        ㈜당신의프랜차이즈의 허가없이 사이트 내의 디자인 및 이미지 등을 무단 사용할 수 없습니다.
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>
