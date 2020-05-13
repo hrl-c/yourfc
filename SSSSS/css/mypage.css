@@ -1,0 +1,65 @@
+/* Plz DELETE ME !!! */
+.-frame {
+    width: 1200px;
+    margin: 0 auto;
+}
+/* Plz DELETE ME !!! */
+
+
+.contents_mypage .uk-card:first-child {
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    margin-top: 40px;
+}
+
+.-mypage_box {
+    width: 1000px;
+    margin: 20px auto;
+    border: 4px double #ff6363;
+}
+
+.inner_mypage_box {
+    box-sizing: border-box;
+    width: 49%;
+    display: inline-block;
+}
+.contents_mypage .no_padding-top {
+    padding-top: 0;
+    padding-left: 20px;
+}
+.contents_mypage .vip {
+    color : #ff6363;
+    font-weight: 600;
+}
+.contents_mypage .-small {
+    font-size: 10px;
+    color: #888;
+}
+.contents_mypage .more>a {
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+}
+.contents_mypage .for_margin {
+    margin-left: 70px;
+}
+.inner_mypage_box > dl {
+    padding-left: 15px;
+    border-left: 1px solid #e2e2e2;
+}
+.contents_mypage dd {
+    padding-left: 7px;
+    padding-top: 5px;
+}
+/* vip_plan에 있는 drop 관련 */
+.contents_mypage .detail {
+    min-width:380px;
+    padding: 17px;
+}
+.contents_mypage .x_sign {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.contents_mypage .uk-drop {
+    margin-top: 0;
+}

@@ -1,0 +1,48 @@
+/* Plz DELETE ME !!! 
+.-frame {
+    width: 1200px;
+    margin: 0 auto;
+}
+ Plz DELETE ME !!! */
+
+
+.contents_news {
+    margin-top: 60px;
+}
+.contents_news>h1.title {
+    text-align: center;
+    font-weight: 500;
+    line-height: 40px;
+    margin: 40px 0;
+}
+
+.contents_news th:nth-child(n+4) {
+    text-align: center;
+}
+/* make first devider bold */
+.contents_news tbody>tr:nth-child(1) {
+    border-top: 1px solid #adadad !important;
+}
+
+.contents_news td:nth-child(n+4) {
+    text-align: center;
+}
+.contents_news td:nth-child(3)>a {
+    font-weight: 600;
+    font-size: 21px;
+    color: #666 !important;
+}
+.contents_news th:last-child {
+    display: none;
+}
+.contents_news td:last-child {
+    display: none;
+}
+
+/* 고정글 & 죽은글 */
+.contents_news tr.fixed {
+    background-color : #ffe0af;
+}
+.contents_news tr.death>td>a {
+    color : rgb(138, 151, 163) !important;
+}
