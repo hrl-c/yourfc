@@ -1,0 +1,22 @@
+/* Plz DELETE ME !!! */
+.-frame {
+    width: 1200px;
+    margin: 0 auto;
+}
+/* Plz DELETE ME !!! */
+
+.contents_fair h2.pretty {
+    font-weight: 100;
+    padding: 0 !important;
+    color: #333;
+    line-height: 35px;
+    font-size: 28px;
+    letter-spacing: -1px;
+
+    text-align: center;
+    margin: 40px auto;
+}
+
+.contents_fair tr.fixed {
+    background-color: rgb(255, 247, 221);
+}

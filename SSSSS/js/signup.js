@@ -126,7 +126,7 @@ function signup() {
 
     let for_check = 1;
     // console.log($('#gender').val());
-    check_each();
+    for_check = check_each();
     if ($('#gender').val() == 'unselected') {
         make_box_red('#gender');
         for_check = 0;
@@ -149,7 +149,11 @@ function check_each() {
         if (!$('input:eq(' + i + ')').val()) {
             make_box_red('input:eq(' + i + ')');
             for_check = 0;
-            console.log('***' + i + ':' + $('input:eq(' + i + ')').val())
+            console.log('after_for_check : ' + for_check)
+            var for_console = $('input:eq(' + i + ')').attr('id')
+            console.log('***' + for_console + ':' + $('input:eq(' + i + ')').val())
+        } else {
+            for_check = 1;
         }
         // console.log( i + ':' + $('input:eq(' + i + ')').val())
     }

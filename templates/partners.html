@@ -1,0 +1,137 @@
+{% extends 'layout.html' %}
+
+{% block contents %}
+
+<div class="contents_partners">
+    <div uk-filter="target: .js-filter">
+        <div class="uk-grid-small uk-grid-divider uk-child-width-auto filter_box inner_partners" uk-grid>
+            <!--- 첫째줄 -->
+            <div class="first_filter">
+                <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                    <li class="uk-active" uk-filter-control>
+                        <a href="#">All</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="first_filter">
+                <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                    <li uk-filter-control="[data-sort_big='inte']">
+                        <a href="#">인테리어</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="first_filter">
+                <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                    <li uk-filter-control="[data-sort_big='machine']">
+                        <a href="#">매장기기</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="first_filter">
+                <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                    <li uk-filter-control="[data-sort_big='law']">
+                        <a href="#">법률</a>
+                    </li>
+                </ul>
+            </div>
+            <!--- / 첫째줄 -->
+            <!-- SMALL_SORT -->
+            <p class="-for_br -frame"></p>
+            <div class="second_filter uk-grid-margin">
+                <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                    <li>
+                        <a>자세한 검색은 위 버튼을 눌러주세요</a>
+                    </li>
+                </ul>
+            </div>
+            <p class="-for_br -frame"></p>
+            <div class="second_filter uk-grid-margin">
+                <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                    <li uk-filter-control="[data-sort_small='inte']">
+                        <a href="#">인테리어</a>
+                    </li>
+                    <li uk-filter-control="[data-sort_small='sign']">
+                        <a href="#">간판</a>
+                    </li>
+                    <li uk-filter-control="[data-sort_small='furniture']">
+                        <a href="#">가구</a>
+                    </li>
+                    <li uk-filter-control="[data-sort_small='design']">
+                        <a href="#">디자인</a>
+                    </li>
+                </ul>
+            </div>
+            <p class="-for_br -frame"></p>
+            <div class="second_filter uk-grid-margin">
+                <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                    <li uk-filter-control="[data-sort_small='kitchen']">
+                        <a href="#">주방</a>
+                    </li>
+                    <li uk-filter-control="[data-sort_small='pos']">
+                        <a href="#">POS</a>
+                    </li>
+                </ul>
+            </div>
+            <p class="-for_br -frame"></p>
+            <div class="second_filter uk-grid-margin">
+                <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                    <li uk-filter-control="[data-sort_small='tax']">
+                        <a href="#">세무사</a>
+                    </li>
+                    <li uk-filter-control="[data-sort_small='labor']">
+                        <a href="#">노무사</a>
+                    </li>
+                    <li uk-filter-control="[data-sort_small='insurance']">
+                        <a href="#">보험</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- / SMALL_SORT -->
+        </div>
+        <hr>
+        <!-- CARDS -->
+        <ul id="pts_card_box" class="js-filter uk-child-width-1-2 uk-child-width-1-4 uk-text-center"
+            uk-grid="masonry: true">
+            <li data-sort_big="law" data-sort_small="labor">
+
+                <div class="uk-card uk-card-hover  uk-card-body">
+                    <canvas width="600" height="650"></canvas>
+                    <div class="uk-position-center">
+                        <div class="pts_img">
+                            <img src="https://picsum.photos/250/150/?blur=2">
+                        </div>
+                        <div class="card_details">
+                            <p>
+                                <span class="pts_card_title">
+                                    안산 명품가구
+                                </span>
+                                <span class="pts_card_local">
+                                    경기도
+                                </span>
+                            </p>
+                            <p>
+                                <span class="pts_card_sort_big">
+                                    인테리어
+                                </span>
+                                <span class="pts_card_sort_small">
+                                    / 가구
+                                </span>
+                            </p>
+                            <p>
+                                <span class="pts_card_hashtag">
+                                    #가구 전문점 #안산
+                                </span>
+                            </p>
+                            <button class="uk-button uk-button-primary uk-button-small">자세히보기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+        <!-- / CARDS -->
+    </div>
+
+</div>
+
+{% endblock %}

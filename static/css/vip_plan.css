@@ -4,8 +4,8 @@
     align-items: center;
     margin-top: 30px;
 }
-h1>.title {
-    width: 500px;
+.contents_vip_plan>.title {
+    text-align: center;
 }
 .letter-vip {
     color: gold;
@@ -64,16 +64,16 @@ h1:not(.title) {
 .plan_box:last-child a:hover {
     color: #7ebdb4;
 }
-.hr {
+.contents_vip_plan .hr {
     width:80%;
     margin: 10px auto 25px;
     border-top: 1px solid #e5e5e5;
 }
-.on_box {
+.contents_vip_plan .on_box {
     padding-left: 30px;
     margin-top: 10px;
 }
-.on_box>li:not(:first-child) {
+.contents_vip_plan .on_box>li:not(:first-child) {
     margin-top: 23px !important;
     font-weight: 500;
 }
@@ -81,15 +81,19 @@ h1:not(.title) {
 .hidden {
     visibility: hidden;
 }
-
-
-.detail {
-    min-width:380px;
-    padding: 17px;
+.contents_vip_plan .x_sign {
+    position: absolute;
+    right:20px;
+    top: 20px;
 }
-.bold {
+.contents_vip_plan .detail {
+    min-width:370px;
+    padding: 17px;
+    top: -20px;
+}
+.contents_vip_plan .bold {
     font-weight: 600;
 }
-.-yellow {
+.contents_vip_plan .-yellow {
     color: #ffba5a;
 }

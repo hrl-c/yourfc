@@ -18,7 +18,7 @@ $(function () {
                         <td class="-center"><a href="#1">'+ stores + '</a></td>\
                         <td class="-right"><a href="#1">'+ money + '</a></td>\
                         <td class="-right"><a href="#1">'+ total_money + '</a></td></tr>'
-        $('tbody').append(temp);
+        $('.search_brand tbody').append(temp);
     }
     let nownum = 0;
 

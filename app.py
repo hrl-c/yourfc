@@ -38,14 +38,6 @@ def saving():
 @app.route('/login', methods=['GET'])
 def goToLoginPage():
     return render_template('login.html')
-@app.route('/signup_terms', methods=['GET'])
-def goToSignup_terms():
-    return render_template('signup_terms.html')
-
-@app.route('/signup', methods=['GET'])
-def goToSignup():
-    print('3')
-    return render_template('signup.html')
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -71,6 +63,24 @@ def login():
         return jsonify({'result':'id_error', 'msg':'I GOT IT'})
 """
 
+@app.route('/signup_terms', methods=['GET'])
+def goToSignup_terms():
+    return render_template('signup_terms.html')
+
+@app.route('/signup', methods=['GET'])
+def goToSignup():
+    print('3')
+    return render_template('signup.html')
+
+@app.route('/partners', methods=['GET'])
+def gotoPartners():
+    return render_template('partners.html')
+
+@app.route('/mypage', methods=['GET'])
+def gotoMypage():
+    ### 나중에 세션 넣어야함.
+    return render_template('mypage.html')
+
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1014,  debug=True)
+    app.run('127.0.0.1', port=1022,  debug=True)

@@ -89,6 +89,7 @@
 .contents_vip_plan .detail {
     min-width:370px;
     padding: 17px;
+    top: -15px;
 }
 .contents_vip_plan .bold {
     font-weight: 600;

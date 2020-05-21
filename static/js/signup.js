@@ -18,11 +18,32 @@ $(function () {
             var chk = $(this).is(":checked");//.attr('checked');
             if (!chk) {
                 $("#check_all").prop('checked', false);
-            } else if ($("#box_1").is(":checked") && $("#box_2").is(":checked")) {
+            } else if ( $("#box_1").is(":checked") && $("#box_2").is(":checked") ){
                 $("#check_all").prop('checked', true);
 
             }
         }
+    })
+
+    $("#check_all").click(function () {
+        var chk = $(this).is(":checked");//.attr('checked');
+        if (chk) {
+            $("#box_1").prop('checked', true);
+            $("#box_2").prop('checked', true);
+        }
+        else {
+            $("#box_1").prop('checked', false);
+            $("#box_2").prop('checked', false);
+        }
+    });
+
+    $('#box_1').click(function () {
+        var unchk = $('#box_1').is(':checked', true)
+        if (!unchk) $('#check_all').prop('checked', false)
+    })
+    $('#box_2').click(function () {
+        var unchk = $('#box_2').is(':checked', true)
+        if (!unchk) $('#check_all').prop('checked', false)
     })
 
     /*========== signup.html*/
@@ -56,15 +77,18 @@ $(function () {
     })
 })
 
+
 /* ================ signup_terms.html */
+var checked_terms = 0
 function check_terms() {
-    console.log('1')
-    if ($("#box_1").is(":checked") && $("#box_2").is(":checked")) {
-        location.href = "/signup";
-    } else {
-        alert('no')
-    }
+    var box_all = $('#box_all').val();
+    var box_all = $('#box_1').val();
+    var box_all = $('#box_2').val();
+    console.log(box_all + ' | ')
+    console.log(box_1 + ' | ')
+    console.log(box_2)
 }
+
 /* ================ signup.html */
 function red_show() {
     if ($('.-red').hasClass('-none')) {
@@ -102,7 +126,7 @@ function signup() {
 
     let for_check = 1;
     // console.log($('#gender').val());
-    check_each();
+    for_check = check_each();
     if ($('#gender').val() == 'unselected') {
         make_box_red('#gender');
         for_check = 0;
@@ -125,10 +149,13 @@ function check_each() {
         if (!$('input:eq(' + i + ')').val()) {
             make_box_red('input:eq(' + i + ')');
             for_check = 0;
-            console.log('***' + i + ':' + $('input:eq(' + i + ')').val())
+            console.log('after_for_check : ' + for_check)
+            var for_console = $('input:eq(' + i + ')').attr('id')
+            console.log('***' + for_console + ':' + $('input:eq(' + i + ')').val())
+        } else {
+            for_check = 1;
         }
         // console.log( i + ':' + $('input:eq(' + i + ')').val())
     }
     return for_check;
 }
-

@@ -1,0 +1,67 @@
+/* Plz DELETE ME !!! */
+.-frame {
+    width: 1200px;
+    margin: 0 auto;
+}
+/* Plz DELETE ME !!! */
+
+.pretty {
+    font-weight: 100;
+    padding: 0 !important;
+    color: #333;
+    line-height: 35px;
+    font-size: 28px;
+    letter-spacing: -1px;
+
+    margin-left : 10px;
+}
+.contents_detail {
+    margin-top: 40px;
+}
+
+.contents_detail .title_area {
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 25px 30px 0;
+}
+.contents_detail .title_area p {
+    text-align: right;
+}
+.contents_detail .content_area {
+    padding-top:40px;
+    position: relative;
+}
+.contents_detail .content_area img {
+    position: absolute;
+    right: 0;
+    top: 40px;
+}
+.contents_detail .content_area table {
+    width: 50%;
+    min-width: 600px;
+}
+.contents_detail .content_area table td {
+    padding: 10px 12px;
+    vertical-align: middle;
+}
+.detail-li {
+    color: #333;
+    border: 1px solid #b2b2b2;
+    margin: 0;
+    overflow: visible;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    -webkit-appearance: none;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100px;
+    vertical-align: middle;
+    font-size: .875rem;
+    line-height: 38px;
+    text-align: center;
+}
+.test-sival {
+    display: block;
+    margin-top: 10px;
+}
