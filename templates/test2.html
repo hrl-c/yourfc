@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>TEST for ajax</title>
+    <script>
+        function sival() {
+            $.ajax({
+                type: "GET",
+                url: '/test',
+                data: {},
+                success: function(res) {
+                    let msg = res['msg'];
+                    console.log(msg);
+                }
+            })
+        }
+        var alpha = window.location.pathname;
+        console.log(alpha);
+
+        var msgs = '{{msgs}}';
+        console.log('safgsdgs' + msgs)
+    </script>
+</head>
+<body>
+    <div style="width: 900px; margin: 0 auto;">
+        <div style="width:400px; height:400px; margin:0 auto; background-color: coral;"></div>
+        <a onclick="sival()">#</a>
+        <br><br><br>
+        <a href="/test2.html" onclick="sival()">./test2.html</a>
+    </div>
+</body>
+</html>

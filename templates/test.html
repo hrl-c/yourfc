@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>TEST for ajax</title>
+    <script>
+        function sival() {
+            console.log('here')
+            $.ajax({
+                type: "GET",
+                url: '/test',
+                data: {},
+                success: function (res) {
+                    let msg = res['msg'];
+                    let result = res['result']
+                    var msgs = '{{msgs}}';
+                    console.log('safgsdgs' + msgs)
+                    /*
+                    console.log(msg);
+                    if (!msg) {
+                        location.href="/test2" + sival
+                    }
+                    */
+                }
+            })
+        }
+
+        var msgs = '{{msgs}}';
+        console.log('safgsdgs' + msgs)
+
+        //생각을 정리해보자면
+        // href 를 패스로 사용시, app.py의 라우트가 작동하여 랜더를 보내버린다.
+        // 그럼 거기서 data를 어떻게 해야할지가 문제가 되는데....
+    </script>
+</head>
+
+<body>
+    <div style="width: 900px; margin: 0 auto;">
+        <a onclick="sival()">18181818</a>
+        <br><br><br>
+        <br><br><br>
+        <a href="/test2" onclick="sival()">/test2.html</a>
+    </div>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 app = Flask(__name__)
 
 client = MongoClient('localhost', 27017)
@@ -82,5 +82,26 @@ def gotoMypage():
     return render_template('mypage.html')
 
 
+### for test
+@app.route('/test', methods=['GET'])
+def forTest():
+    print('1')
+    '''
+    now_receive = request.args.get('now')
+    print(now_receive)
+    '''
+
+    return redirect(url_for('forTest', sival="tlqkf"))
+
+'''
+@app.route('/test/<now>')
+def sivalsival(now):
+    print(now)
+'''
+@app.route('/gotest', methods=['GET'])
+def sigsig():
+    print('jksadngkjsngkjsngkjsn')
+    return render_template('test.html')
+
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1022,  debug=True)
+    app.run('127.0.0.1', port=1030,  debug=True)
