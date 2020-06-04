@@ -1,0 +1,48 @@
+.contents_search_brand {
+    width: 100%;
+    position: relative;
+}
+
+/* HOT_TAG */
+.hot_tag {
+    width: 200px;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+.hot_tag-content {
+    position: relative;
+    width: 200px;
+}
+
+.hot_tag img {
+    width: 200px;
+    height: 200px;
+}
+
+.hot_tag span.store-sort {
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+}
+
+/* FAVORITE */
+.favorite {
+    width: 400px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+
+/* Content */
+.content_search_brand {
+    width: 800px;
+    margin: 40px auto 0;
+    background-color: #fff;
+    z-index:0;
+}
+
+.search_option {
+    width: 100%;
+    margin-bottom: 40px;
+}
