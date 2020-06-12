@@ -18,16 +18,16 @@ $(function () {
                         <td class="-center"><a href="#1">'+ stores + '</a></td>\
                         <td class="-right"><a href="#1">'+ money + '</a></td>\
                         <td class="-right"><a href="#1">'+ total_money + '</a></td></tr>'
-        $('tbody').append(temp);
+        $('.search_brand-table').append(temp);
     }
     let nownum = 0;
 
 
     // hover, text
-    $('.search_brand_table tr').on('mouseover hover', function () {
+    $('.search_brand-table tr').on('mouseover hover', function () {
         $(this).find('a').css('color', '#777');
     })
-    $('.search_brand_table tr').on('mouseout unhover', function () {
+    $('.search_brand-table tr').on('mouseout unhover', function () {
         $(this).find('a').css('color', '#222222');
     })
 

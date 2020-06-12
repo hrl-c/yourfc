@@ -62,3 +62,11 @@
 .-size_control {
     width: 400px;
 }
+
+.yymmdd-size_control {
+    width: 90px;
+    margin-left: 14px;
+}
+.yymmdd-size_control_2x {
+    width: 180px;
+}

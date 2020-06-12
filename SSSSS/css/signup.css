@@ -30,7 +30,7 @@
     text-align: center;
 }
 
-.-small {
+.-small_signup {
     font-size: 0.8rem;
     font-weight: 400;
 }
@@ -61,4 +61,12 @@
 }
 .-size_control {
     width: 400px;
+}
+
+.yymmdd-size_control {
+    width: 90px;
+    margin-left: 20px;
+}
+.yymmdd-size_control_2x {
+    width: 180px;
 }
