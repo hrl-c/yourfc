@@ -64,27 +64,26 @@ $(function () {
     show_yymmdd_temp(1, 32, 'dd');
 
 
-
+    // 패스워드 확인 항상 감시
+    let chked_pw = 0;
     $('#password_check').on('mouseleave focusout', function () {
         let pw = $('#password').val();
         let pw_check = $('#password_check').val();
         if (pw == '') {
+            chked_pw = 0;
             return
         } else if (pw !== pw_check) {
-            if ($('#password_check').hasClass('uk-form-success')) {
-                $('#password_check').removeClass('uk-form-success');
-            }
+            make_box_green('#password_check');
+            chked_pw = 0;
             make_box_red('#password_check');
-            red_show();
         } else if (pw == pw_check) {
-            if ($('#password_check').hasClass('uk-form-danger')) {
-                $('#password_check').removeClass('uk-form-danger');
-            }
+            make_box_common('#password_check');
             $('#password_check').addClass('uk-form-success');
-            red_hide();
+            chked_pw = 1;
         }
     })
 
+    // 빨간색의 박스에 커서에 '''간섭'''할 때, 빨간표시를 없애주는 코드
     $('input, #gender, #yy, #mm, #dd').on('click focusin', function () {
         if ($(this).attr('id') !== 'password_check') {
             if ($(this).hasClass('uk-form-danger')) {
@@ -118,26 +117,28 @@ function unready_signup() {
 
 
 /* ================ signup.html */
-function red_show() {
-    if ($('.-red').hasClass('-none')) {
-        console.log(1);
-    } else {
-        console.log('error');
-    }
-    console.log(2);
-    $('.-none').css('display', 'inline');
-    console.log(3);
-}
-function red_hide() {
-    if ($('.-red').css('display') == 'inline') {
-        console.log(1);
-    } else {
-        console.log('error');
-    }
-    $('.-none').css('display', 'none');
-}
+
+// 박스 색깔 변환 함수S
 function make_box_red(box) {
+    if ($(box).hasClass('uk-form-success')) {
+        $(box).removeClass('uk-form-success')
+    }
     $(box).addClass('uk-form-danger');
+}
+function make_box_green(box) {
+    if ($(box).hasClass('uk-form-danger')) {
+        $(box).removeClass('uk-form-danger')
+    }
+    $(box).addClass('uk-form-success');
+}
+
+function make_box_common(box) {
+    if ($(box).hasClass('uk-form-danger')) {
+        $(box).removeClass('uk-form-danger');
+    }
+    if ($(box).hasClass('uk-form-success')) {
+        $(box).removeClass('uk-form-success')
+    }
 }
 
 function signup() {
@@ -154,114 +155,268 @@ function signup() {
     let phone = $('#phone').val();
 
 
-    let for_check = 1;
-    // console.log($('#gender').val());
-    console.log('1 : ' + for_check);
-    for_check = check_date(mm, dd);
-    console.log('2 : ' + for_check);
-    for_check = check_each();
-    console.log('3 : ' + for_check);
-    for_check = check_select();
-    console.log('4 : ' + for_check);
-    // for_check = check_type()
+    let chk_input = 0;
+    let chk_select = 0;
+    let chk_date = 0;
+    chk_date = check_date(mm, dd);
+
+    chk_input = check_each();
+
+    chk_select = check_select();
     console.log('-----------------------------------------');
 
-    if (for_check == 0) {
-        alert('입력되지 않은 항목이 있습니다.');
-        return
-    }
     if (pw !== pw_check) {
         alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요');
-        return
+        return false;
     }
+
+    var chk_total = chk_input + chk_select + chk_date;
+    console.log('chk_total : ' + chk_total);
+    console.log('chk_input : ' + chk_input);
+    console.log('chk_select : ' + chk_select);
+    console.log('chk_date : ' + chk_date);
+    if (chk_total == 3) {
+        $.ajax({
+            url: '/signup',
+            type: 'POST',
+            data: {
+                'id-give': id,
+                'pw-give': pw,
+                'pw_check-give': pw_check,
+                'name-give': name,
+                'yy-give': yy,
+                'mm-give': mm,
+                'dd-give': dd,
+                'gender-give': gender,
+                'email-give': email,
+                'phone-give': phone
+            },
+            success: function (res) {
+                if (res['result'] == 'success') {
+                    alert('회원가입 완료')
+                    window.location.href = '/';
+                } else {
+                    alert('ERROR');
+                }
+            }
+        })
+    } else {
+        return false;
+    }
+    
     console.log(for_check)
-    alert('회원가입 완료')
+    alert('회원가입 완료!!!!!!!!!!!')
 
 }
 
+/*
+id_receive = request.form['id-give']
+pw_receive = request.form['pw-give']
+pw_check_receive = request.form['pw_check-give']
+name_receive = request.form['name-give']
+yy_receive = request.form['yy-give']
+mm_receive = request.form['mm-give']
+dd_receive = request.form['dd-give']
+gender_receive = request.form['gender-give']
+email_receive = request.form['email-give']
+phone_receive = request.form['phone-give']
+
+'id' : id_receive,
+'pw' : pw_receive,
+'pw_check' : pw_check_receive,
+'name' : name_receive,
+'yy' : yy_receive,
+'mm' : mm_receive,
+'dd' : dd_receive,
+'gender' : gender_receive,
+'email' : email_receive,
+'phone' : phone_receive
+*/
+
 function check_each() {
+    var for_cal = 0;
+    var for_frame = 0;
     for (var i = 1; i < 7; i++) {
+        // 적었는지 확인하는 코드
         if (!$('input:eq(' + i + ')').val()) {
             make_box_red('input:eq(' + i + ')');
-            for_check = 0;
-            console.log('after_for_check : ' + for_check)
+            for_cal += 0;
+            console.log('after_for_check : ' + chk_input)
             var for_console = $('input:eq(' + i + ')').attr('id')
             console.log('***' + for_console + ':' + $('input:eq(' + i + ')').val())
+        } else if($('input:eq(' + i + ')').val().search(/\s/) != -1){
+            alert("모든 입력사항은 \n공백 없이 입력해주세요.");
+            return
         } else {
-            for_check = 1;
+            for_cal += 1;
+            // 형식에 맞는지 판단하는 코드
+            switch (i) {
+                case 1:
+                    var id = $('#id').val();
+                    // 숫자와 영문이 하나씩 들어간 8자리 이상 15자리 이하인 아이디 색출.
+                    var id_frame = /(?=.*\d{1,15})(?=.*[a-z]{1,15}).{6,15}$/;
+                    if (!id_frame.test(id)) {
+                        make_box_red('#id');
+                        alert('아이디는 영어 소문자와 숫자가 하나씩 들어간 6자리이상 15자리이하 여야 합니다')
+                        break;
+                    } else if (id_frame.test(id)) {
+                        make_box_green('#id');
+                        for_frame += 1;
+                        break;
+                    } else {
+                        alert('오류 발생');
+                        console.log('error_in_id');
+                        break;
+                    }
+                case 1:
+                    var password = $('#password').val();
+                    // 숫자와 영문이 하나씩 들어간 8자리 이상 15자리 이하인 PW 색출.
+                    var pw_frame = /(?=.*\d{1,15})(?=.*[a-zA-Z]{1,15}).{8,15}$/;
+                    if (!pw_frame.test(password)) {
+                        make_box_red('#password');
+                        alert('비밀번호는 영어 대소문자와 숫자가 하나씩 들어간 8자리이상 15자리이하 여야 합니다')
+                        break;
+                    } else if (pw_frame.test(password)) {
+                        make_box_green('#password');
+                        for_frame += 1;
+                        break;
+                    } else {
+                        alert('오류 발생');
+                        console.log('error_in_pw');
+                        break;
+                    }
+                case 4:
+                    var name = $('#name').val();
+                    var name_frame = /^[가-힣]{2, 4}$/;
+                    if (!name_frame.test(name)) {
+                        make_box_red('#name');
+                        alert('이름이 올바르지 않습니다')
+                        break;
+                    } else if (name_frame.test(name)) {
+                        make_box_green('#name');
+                        for_frame += 1;
+                        break;
+                    } else {
+                        alert('오류 발생');
+                        console.log('error_in_name');
+                        break;
+                    }
+                case 5:
+                    var email = $('#email').val();
+                    var email_frame = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+                    if (!email_frame.test(email)) {
+                        make_box_red('#email');
+                        alert('이메일 형식이 올바르지 않습니다')
+                        break;
+                    } else if (email_frame.test(email)) {
+                        make_box_green('#email');
+                        for_frame += 1;
+                        break;
+                    } else {
+                        alert('오류 발생');
+                        console.log('error_in_email');
+                        break;
+                    }
+                case 6:
+                    var phone = $('#phone').val();
+                    if ( phone.length > 9 && phone.length < 12 ) {
+                        for_frame += 1;
+                        break;
+                    } else {
+                        make_box_red('#phone');
+                        alert('전화번호는 \'-\' 없이 10~11자리만 입력해주세요.');
+                        break;
+                    }
+                default:
+                    for_frame += 1;
+                    break;
+            }
         }
-        // console.log( i + ':' + $('input:eq(' + i + ')').val())
     }
-    return for_check;
+    if (for_cal == 6  && for_frame == 6) {
+        chk_input = 1;
+    } else {
+        alert('정확하게 입력되지 않은 항목이 있습니다.')
+        chk_input = 0;
+    }
+    return chk_input;
 }
 
 function check_select() {
-    if ($('#gender').val() == 'unselected') {
-        make_box_red('#gender');
-        for_check = 0;
+    // cs = check_select
+    var forfor = 0;
+    var cs = ['#gender', '#yy', '#mm', '#dd'];
+    for (var i=0; i<cs.length; i++) {
+        if ( $(cs[i]).val() == 'unselected' ) {
+            make_box_red(cs[i]);
+        } else {
+            forfor += 1;
+        }
     }
-    if ($('#yy').val() == 'unselected') {
-        make_box_red('#yy');
-        for_check = 0;
+    if ( forfor == 4 ) {
+        chk_select = 1;
+    } else {
+        chk_select = 0;
+        alert('입력되지 않은 항목이 있습니다.')
     }
-    if ($('#mm').val() == 'unselected') {
-        make_box_red('#mm');
-        for_check = 0;
-    }
-    if ($('#dd').val() == 'unselected') {
-        make_box_red('#dd');
-        for_check = 0;
-    }
-    return for_check;
+    return chk_select;
 }
 
 function check_date(mm, dd) {
-    console.log(mm);
-    console.log(dd);
-    console.log('시발련아');
+    var cd = 1;
     if (mm == 2) {
-        console.log('시발련아');
         switch (dd) {
-            case 30:
-            case 31:
-                console.log('시발련아');
+            case '30':
+            case '31':
                 alert('2월을 선택하시고,' + dd + '일을 선택하셨습니다.');
-                for_check = 0;
-                return for_check;
+                make_box_red('#dd');
+                cd = 0;
+                return cd;
                 break;
-            case 29:
+            case '29':
                 var answer = confirm('생년월일이 2월 29일로 선택하셨습니다. \n맞으면 확인을 눌러주세요.');
                 if (answer == true) {
-                    for_check = 1;
-                    return for_check;
+                    cd = 1;
+                    return cd;
                     break;
                 } else {
-                    alert('생년월일을 다시 입력해주세요.')
-                    for_check = 0;
-                    return for_check;
+                    alert('생년월일을 다시 입력해주세요.');
+                    make_box_red('#mm');
+                    make_box_red('#dd');
+                    cd = 0;
+                    return cd;
                     break;
                 }
+            default:
+                cd = 1;
+                return cd;
+                break;
         }
     }
     if (dd == 31) {
-        console.log('시발련아');
         switch (mm) {
-            case 2:
-            case 4:
-            case 6:
-            case 9:
-            case 11:
+            case '2':
+            case '4':
+            case '6':
+            case '9':
+            case '11':
                 alert('31일이 없는 달을 선택하셨습니다.');
-                for_check = 0;
-                return for_check;
+                make_box_red('#dd');
+                cd = 0;
+                return cd;
                 break;
             default:
-                for_check = 1;
-                return for_check;
+                cd = 1;
+                return cd;
                 break;
         }
     }
-
+    console.log('cd : ' + cd);
+    if ( cd == 1 ) {
+        return cd;
+    } else {
+        return 0;
+    }
 }
 
 function check_type(for_check) {

@@ -247,7 +247,16 @@
                         <h3 class="signup_title">
                             <label for="phone">휴대전화</label>
                         </h3>
-                        <input type="number" id="phone" class="uk-input -size_control">
+                        <select class="uk-select telecom-size_control" id="telecom">
+                            <option value="unselected" selected>통신사</option>
+                            <option value="skt">SKT</option>
+                            <option value="kt">KT</option>
+                            <option value="lg">LGU+</option>
+                            <option value="skt_egg">SKT 알뜰폰</option>
+                            <option value="kt_egg">KT 알뜰폰</option>
+                            <option value="lg_egg">LGU+ 알뜰폰</option>
+                        </select>
+                        <input type="number" id="phone" class="uk-input phone-size_control">
                     </div>
                     <br><br>
                     <div class="signup_row">

@@ -34,12 +34,6 @@
     font-size: 0.8rem;
     font-weight: 400;
 }
-.-red {
-    color: #f0506e;
-}
-.-none {
-    display: none;
-}
 
 .-title_signup {
     text-align: center;
@@ -69,4 +63,17 @@
 }
 .yymmdd-size_control_2x {
     width: 180px;
+}
+.telecom-size_control {
+    width: 120px;
+}
+.phone-size_control {
+    width: 280px;
+}
+
+/* Input 숫자일때, 옆에 화살표 없애주는 코드 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

@@ -34,12 +34,6 @@
     font-size: 0.8rem;
     font-weight: 400;
 }
-.-red {
-    color: #f0506e;
-}
-.-none {
-    display: none;
-}
 
 .-title_signup {
     text-align: center;
@@ -65,8 +59,22 @@
 
 .yymmdd-size_control {
     width: 90px;
-    margin-left: 20px;
+    margin-left: 14px;
 }
 .yymmdd-size_control_2x {
     width: 180px;
+}
+
+.telecom-size_control {
+    width: 120px;
+}
+.phone-size_control {
+    width: 280px;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
