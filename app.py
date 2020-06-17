@@ -54,7 +54,12 @@ def signupfunc():
         dd_receive = request.form['dd-give']
         gender_receive = request.form['gender-give']
         email_receive = request.form['email-give']
+        telecom_receive = request.form['telecom-give']
         phone_receive = request.form['phone-give']
+        su_yy_receive = request.form['su_yy-give']
+        su_mm_receive = request.form['su_mm-give']
+        su_dd_receive = request.form['su_dd-give']
+        su_yo_receive = request.form['su_yo-give']
 
         new_user = {
             'id': id_receive,
@@ -66,7 +71,12 @@ def signupfunc():
             'dd': dd_receive,
             'gender': gender_receive,
             'email': email_receive,
-            'phone': phone_receive
+            'telecom': telecom_receive,
+            'phone': phone_receive,
+            'su_yy': su_yy_receive,
+            'su_mm': su_mm_receive,
+            'su_dd': su_dd_receive,
+            'su_yo': su_yo_receive
         }
 
         db.users.insert_one(new_user)
@@ -135,4 +145,4 @@ def sigsig():
 
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1060,  debug=True)
+    app.run('127.0.0.1', port=1067,  debug=True)
