@@ -56,6 +56,7 @@ def signupfunc():
         email_receive = request.form['email-give']
         telecom_receive = request.form['telecom-give']
         phone_receive = request.form['phone-give']
+
         su_yy_receive = request.form['su_yy-give']
         su_mm_receive = request.form['su_mm-give']
         su_dd_receive = request.form['su_dd-give']
@@ -85,6 +86,15 @@ def signupfunc():
     else:
         print('method-error_in_signup')
 
+
+@app.route('/id_check', methods=['POST'])
+def checkId():
+    id_check_receive = request.form['id-give-for_id_check']
+    target_id = db.users.find_one({'id':id_check_receive})
+    if target_id :
+        return jsonify({'result':'success'}, {'token':'0'})
+    else :
+        return jsonify({'result':'success'}, {'token':'1'})
 
 @app.route('/mypage', methods=['GET'])
 def gotoMypage():
@@ -145,4 +155,4 @@ def sigsig():
 
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1067,  debug=True)
+    app.run('127.0.0.1', port=1071,  debug=True)

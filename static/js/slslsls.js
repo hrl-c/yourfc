@@ -95,11 +95,6 @@ $(function () {
         }
 
     })
-
-    $('#id').on('keypress', function() {
-        $('button.id_check').removeClass('-display_for_signup');
-        $('button.id_check_done').addClass('-display_for_signup')
-    })
 })
 
 
@@ -163,6 +158,7 @@ function signup() {
     let telecom = $('#telecom').val();
     let phone = $('#phone').val();
 
+    let chk_id = id_check(id);
 
 
     let chk_input = 0;
@@ -176,25 +172,16 @@ function signup() {
     console.log('-----------------------------------------');
 
     if (pw !== pw_check) {
-        alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요');
+        alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요 들레히이');
         return false;
     }
-
-    // id_check_done이 숨어있으면 안된다 ==> -display_for_signup을 가지고 있으면 안된다.
-    var chk_id = $('.id_check_done').hasClass('display_for_signup');
-    console.log('chk_id : ' + chk_id);
-    
-
 
     var chk_total = chk_input + chk_select + chk_date;
     console.log('chk_total : ' + chk_total);
     console.log('chk_input : ' + chk_input);
     console.log('chk_select : ' + chk_select);
     console.log('chk_date : ' + chk_date);
-    if (!chk_id) {
-        alert('아이디 중복확인을 완료해주세요.');
-    } else {
-        if (chk_total == 3) {
+    if (chk_total == 3 && chk_id == 1) {
         let now_date = new Date();
         let su_yy = now_date.getFullYear(); // 년도
         let su_mm = now_date.getMonth() + 1;  // 월
@@ -229,10 +216,15 @@ function signup() {
                 }
             }
         })
+    } else if (!chk_id) {
+        alert('아이디 중복확인을 완료해주세요.');
+        return false;
+    } else {
+        return false;
     }
 
     alert('회원가입 완료!!!!!!!!!!! in js')
-    }
+
 }
 
 
@@ -426,30 +418,32 @@ function check_date(mm, dd) {
     }
 }
 
-function id_check() {
-    var id = $('#id').val();
+function id_check(id) {
+    var token = '';
     $.ajax({
         url: '/id_check',
         type: 'POST',
         data: {
-            'id-give-for_id_check' : id
         },
         success: function (res) {
             if (res['result'] == 'success') {
                 if (res['token'] == '1') {
                     alert('사용가능한 아이디입니다.');
-                    $('button.id_check_done').removeClass('-display_for_signup');
-                    $('button.id_check').addClass('-display_for_signup')
+                    token = 1;
                 } else if (res['token'] == '0') {
                     alert('이미 사용중인 아이디 입니다.')
+                    token = 0;
                 } else {
                     alert('알 수 없는 에러가 발생하였습니다.')
+                    token = 200;
                 }
             } else {
                 alert('서버에 문제가 발생하였습니다.');
             }
         }
-    }) 
+    })
+
+    return token;
 }
 
 // 월, 일 select 페이지 로드시에 만들기. -- html에 구현하면 지저분하니께

@@ -77,3 +77,29 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+/* 아이디 중복확인 관련 css */
+#id {
+    width:300px;
+}
+button.i_c {
+    width: 100px;
+    height: 40px;
+    padding: 0 10px;
+    background-color: #fff;
+}
+button.i_c:hover {
+    background-color: #fff;
+}
+
+button.id_check_done {
+    background-color: #f0f0f0
+}
+button.id_check_done:hover {
+    width: 100px;
+    height: 40px;
+    padding: 0 10px;
+    background-color: #f0f0f0;
+}
+
+.-display_for_signup {
+    display: none;
