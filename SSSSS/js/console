@@ -1,0 +1,29 @@
+검사 과정 >>
+
+    하나도 적지 않았을때
+
+console |
+signup.js:420 cd : 1
+signup.js:247 ***id:
+signup.js:247 ***password:
+signup.js:247 ***password_check:
+signup.js:247 ***name:
+signup.js:247 ***email:
+signup.js:247 ***phone:
+signup.js:340 for_frame : 0
+
+alert |
+정확하게 입력되지 않은 항목이 있습니다.
+입력되지 않은 항목이 있습니다.
+아이디 중복확인을 확인해주세요.
+
+    하나씩 적지 않았을때 ... 이건 굳이 해야할까 싶네...
+기록은 하지 말고 좀 충격적인 경우에만 error 기록
+
+    형식에 맞지 않게 입력했을때
+
+    중복확인을 하지 않았을때
+
+    중복확인을 하고 다시 한번 바꿨을때
+
+    다른 모든 요소도 통과를 받았는데도 다시 고쳤을때 => red

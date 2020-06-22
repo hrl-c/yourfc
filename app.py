@@ -2,6 +2,7 @@ from pymongo import MongoClient
 
 import flask
 from flask import Flask, render_template, jsonify, request, redirect, url_for
+
 app = Flask(__name__)
 
 client = MongoClient('localhost', 27017)
@@ -12,6 +13,7 @@ db = client.dbtest
 def home():
     return render_template('index.html')
 
+
 # ===== util ===== #
 # LOGIN
 
@@ -20,15 +22,17 @@ def loginfunc():
     if flask.request.method == 'POST':
         id_receive = request.form['id_give']
         pw_receive = request.form['pw_give']
-        print(id_receive, '/', pw_receive)
-        # result = db.users.find({"id": id_receive})
-        test_id = 'test01'
-        test_pw = 'test10'
-        if id_receive == test_id and pw_receive == test_pw:
-            print('logggggggggggg')
-            return jsonify({'result': 'success', 'msg': 'I GOT IT'})
+        id_result = db.users.find({"id": id_receive})
+        pw_result = db.users.find({"password": pw_receive})
+        if not id_result:
+            return jsonify({'result': 'fail', 'msg': 'no_id'})
+        elif not pw_result:
+            return jsonify({'result': 'fail', 'msg': 'no_pw'})
+        elif id_result and pw_result:
+            return jsonify({'result': 'success', 'msg': 'login성공'})
         else:
-            return jsonify({'result': 'id_error', 'msg': 'I  IT'})
+            return jsonify({'result': 'error', 'msg': 'error444'})
+
     elif flask.request.method == 'GET':
         return render_template('login.html')
     else:
@@ -89,12 +93,14 @@ def signupfunc():
 
 @app.route('/id_check', methods=['POST'])
 def checkId():
+    print('/id_check')
     id_check_receive = request.form['id-give-for_id_check']
-    target_id = db.users.find_one({'id':id_check_receive})
-    if target_id :
-        return jsonify({'result':'success'}, {'token':'0'})
-    else :
-        return jsonify({'result':'success'}, {'token':'1'})
+    target_id = db.users.find_one({'id': id_check_receive})
+    if target_id:
+        return jsonify({'result': 'success', 'token': '0'})
+    else:
+        return jsonify({'result': 'success', 'token': '1'})
+
 
 @app.route('/mypage', methods=['GET'])
 def gotoMypage():
@@ -104,10 +110,11 @@ def gotoMypage():
 
 @app.route('/vip', methods=['GET'])
 def check_vip():
-    if (0) : #세션을 넣겠다는 의미
+    if (0):  # 세션을 넣겠다는 의미
         return render_template('vip.html')
-    else :
+    else:
         return render_template('vip_plan.html')
+
 
 # ===== NAV ===== #
 
@@ -145,7 +152,7 @@ def saving():
         #db.test.insert_one(item)
         print(item)
         '''
-    return jsonify({'result':'success', 'msg':'I GOT IT'})
+    return jsonify({'result': 'success', 'msg': 'I GOT IT'})
 
 
 @app.route('/gotest', methods=['GET'])
@@ -155,4 +162,4 @@ def sigsig():
 
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1071,  debug=True)
+    app.run('127.0.0.1', port=1092, debug=True)

@@ -93,14 +93,21 @@ button.i_c:hover {
 }
 
 button.id_check_done {
-    background-color: #f0f0f0
+    background-color: rgb(22, 236, 161);
+    border : 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 17px;
 }
 button.id_check_done:hover {
     width: 100px;
     height: 40px;
     padding: 0 10px;
-    background-color: #f0f0f0;
+    background-color: rgb(68, 255, 190);    
+    color: #fff;
 }
+
+
 
 .-display_for_signup {
     display: none;

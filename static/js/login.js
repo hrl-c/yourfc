@@ -30,11 +30,18 @@ function try_login(id, pw) {
             'id_give' : id
             , 'pw_give' : pw
         },
-        success: function (response) { // 성공하면
-            if (response['result'] == 'success') {
-                alert(response['msg']);
-            } else {
-                console.log(response);
+        success: function (res) { // 성공하면
+            if (res['result'] == 'success') {
+                alert(res['msg']);
+            } else if (res['fail']) {
+                if (res['msg'] == 'no_id') {
+                    alert('가입하지 않은 아이디입니다.')
+                } else if (res['msg'] == 'no_pw') {
+                    alert('잘못된 비밀번호입니다.')
+                } else {
+                    alert(res['msg'])
+                    console.log(res['msg'])
+                }
             }
         }
     })

@@ -66,24 +66,23 @@ $(function () {
 
     // 패스워드 확인 항상 감시
     let chked_pw = 0;
-    $('#password_check').on('mouseleave focusout', function () {
+    $('#password_check, #password').on('mouseleave focusout keyup', function () {
         let pw = $('#password').val();
         let pw_check = $('#password_check').val();
-        if (pw == '') {
+        if (pw == '' || pw_check == '') {
             chked_pw = 0;
+            make_box_common('#password_check');
             return
         } else if (pw !== pw_check) {
-            make_box_green('#password_check');
             chked_pw = 0;
             make_box_red('#password_check');
         } else if (pw == pw_check) {
-            make_box_common('#password_check');
-            $('#password_check').addClass('uk-form-success');
+            make_box_green('#password_check');
             chked_pw = 1;
         }
     })
 
-    // 빨간색의 박스에 커서에 '''간섭'''할 때, 빨간표시를 없애주는 코드
+    // 빨간색의 박스에 커서에 ***간섭***할 때, 빨간표시를 없애주는 코드
     $('input, #gender, #yy, #mm, #dd, #telecom').on('click focusin', function () {
         if ($(this).attr('id') !== 'password_check') {
             /*
@@ -96,7 +95,7 @@ $(function () {
 
     })
 
-    $('#id').on('keypress', function() {
+    $('#id').on('keypress keyup', function () {
         $('button.id_check').removeClass('-display_for_signup');
         $('button.id_check_done').addClass('-display_for_signup')
     })
@@ -176,14 +175,14 @@ function signup() {
     console.log('-----------------------------------------');
 
     if (pw !== pw_check) {
-        alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요');
+        alert('비밀번호와 비밀번호 확인이 일치하지 않습니다. 다시 확인해주세요');
         return false;
     }
 
     // id_check_done이 숨어있으면 안된다 ==> -display_for_signup을 가지고 있으면 안된다.
-    var chk_id = $('.id_check_done').hasClass('display_for_signup');
+    var chk_id = $('.id_check_done').hasClass('-display_for_signup');
     console.log('chk_id : ' + chk_id);
-    
+
 
 
     var chk_total = chk_input + chk_select + chk_date;
@@ -191,10 +190,10 @@ function signup() {
     console.log('chk_input : ' + chk_input);
     console.log('chk_select : ' + chk_select);
     console.log('chk_date : ' + chk_date);
-    if (!chk_id) {
+    if (chk_id) {
         alert('아이디 중복확인을 완료해주세요.');
-    } else {
-        if (chk_total == 3) {
+        make_box_red('input#id');
+    } else if (chk_total == 3) {
         let now_date = new Date();
         let su_yy = now_date.getFullYear(); // 년도
         let su_mm = now_date.getMonth() + 1;  // 월
@@ -229,9 +228,8 @@ function signup() {
                 }
             }
         })
-    }
-
-    alert('회원가입 완료!!!!!!!!!!! in js')
+    } else {
+        console.log('nope')
     }
 }
 
@@ -256,7 +254,7 @@ function check_each() {
                 case 1:
                     var id = $('#id').val();
                     // 숫자와 영문이 하나씩 들어간 8자리 이상 15자리 이하인 아이디 색출.
-                    var id_frame = /(?=.*\d{1,15})(?=.*[a-z]{1,15}).{6,15}$/;
+                    var id_frame = /^[a-z0-9]{6,15}$/;
                     if (!id_frame.test(id)) {
                         make_box_red('#id');
                         alert('아이디는\n영어 소문자와 숫자가 하나씩 들어간\n6자리이상 15자리이하 여야 합니다')
@@ -281,7 +279,9 @@ function check_each() {
                         break;
                     } else if (pw_frame.test(password)) {
                         make_box_green('#password');
-                        make_box_green('#password_check');
+                        if ($('#password_check').val() == $('#password').val()) {
+                            make_box_green('#password_check');
+                        }
                         for_frame += 1;
                         break;
                     } else {
@@ -432,24 +432,29 @@ function id_check() {
         url: '/id_check',
         type: 'POST',
         data: {
-            'id-give-for_id_check' : id
+            'id-give-for_id_check': id
         },
         success: function (res) {
             if (res['result'] == 'success') {
                 if (res['token'] == '1') {
                     alert('사용가능한 아이디입니다.');
                     $('button.id_check_done').removeClass('-display_for_signup');
-                    $('button.id_check').addClass('-display_for_signup')
+                    $('button.id_check').addClass('-display_for_signup');
+                    make_box_green('#id');
                 } else if (res['token'] == '0') {
                     alert('이미 사용중인 아이디 입니다.')
+                    make_box_common('#id')
                 } else {
                     alert('알 수 없는 에러가 발생하였습니다.')
                 }
             } else {
+                console.log(res);
+                console.log(res['result']);
+                console.log(res['token']);
                 alert('서버에 문제가 발생하였습니다.');
             }
         }
-    }) 
+    })
 }
 
 // 월, 일 select 페이지 로드시에 만들기. -- html에 구현하면 지저분하니께
