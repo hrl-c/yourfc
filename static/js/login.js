@@ -1,3 +1,7 @@
+$(function() {
+    $(".contents_login").keyup(function(e){if(e.keyCode == 13)  login(); });
+
+})
 function login() {
     var id = $('#user_id').val();
     var password = $('#user_password').val();
@@ -23,6 +27,7 @@ function verifyIdPw(id, pw) {
 }
 // GO USING AJAX
 function try_login(id, pw) {
+    console.log('function try_login')
     $.ajax({
         type: "POST",
         url: "/login",
@@ -31,9 +36,12 @@ function try_login(id, pw) {
             , 'pw_give' : pw
         },
         success: function (res) { // 성공하면
+            console.log('res = ' + res)
+            console.log('res result = ' + res['result'])
+            console.log('res msg = ' + res['msg'])
             if (res['result'] == 'success') {
                 alert(res['msg']);
-            } else if (res['fail']) {
+            } else if (res['result'] == 'fail') {
                 if (res['msg'] == 'no_id') {
                     alert('가입하지 않은 아이디입니다.')
                 } else if (res['msg'] == 'no_pw') {

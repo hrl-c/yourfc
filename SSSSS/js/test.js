@@ -1,15 +1,27 @@
-var id = 'dagkfka93';
-// 숫자와 영문이 하나씩 들어간 8자리 이상 15자리 이하인 아이디 색출.
-var id_frsame = /(?=.*\d{1,15})(?=.*[a-z]{1,15}).{6,15}$/;
-var id_frame = /^[a-z0-9]{6,15}$/;
-if (!id_frame.test(id)) {
-    console.log('아이디는\n영어 소문자와 숫자가 하나씩 들어간\n6자리이상 15자리이하 여야 합니다')
-} else if (id_frame.test(id)) {
-    console.log('ㄱ...가능..!')
-    
-} else {
-    console.log('error in id')
+var basic = 57.99;
+
+function delevery() {
+    this.basic = 11.13;
+    this.prime = 17.13;
+    this.express = 28.58;
 }
 
-console.log(id_frame.test(id))
-if (id_frame.test(id) == true) { console.log('뭔 에러야 시발'); }
+var del = new delevery();
+
+make_it_dollar(basic + del.basic);
+make_it_dollar(basic + del.prime);
+make_it_dollar(basic + del.express);
+
+function make_it_dollar(won) {
+    var dollar = won*1230;
+    console.log(dollar);
+}
+
+var basic_one = make_it_dollar(basic + del.basic);
+var prime_one = make_it_dollar(basic + del.prime);
+var express_one = make_it_dollar(basic + del.express);
+
+var tlqkf = basic_one-prime_one;
+console.log(tlqkf);
+console.log(sival);
+console.log(fuxk);

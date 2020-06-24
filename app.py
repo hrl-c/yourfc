@@ -22,8 +22,23 @@ def loginfunc():
     if flask.request.method == 'POST':
         id_receive = request.form['id_give']
         pw_receive = request.form['pw_give']
-        id_result = db.users.find({"id": id_receive})
-        pw_result = db.users.find({"password": pw_receive})
+        print('id-receive = ' + id_receive)
+        print('id-receive = ' + pw_receive)
+        user_result = db.users.find_one({"id": id_receive})
+        id_result = 0
+        pw_result = 0
+        if user_result is None :
+            print('none')
+            id_result = 0
+        else :
+            id_result = 1
+            print(user_result)
+            print(user_result['pw'])
+            if user_result['pw'] == pw_receive :
+                pw_result = 1
+            else:
+                pw_result = 0
+
         if not id_result:
             return jsonify({'result': 'fail', 'msg': 'no_id'})
         elif not pw_result:
@@ -162,4 +177,4 @@ def sigsig():
 
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1092, debug=True)
+    app.run('127.0.0.1', port=1100, debug=True)
