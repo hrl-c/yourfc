@@ -1,0 +1,51 @@
+.contents_find {
+    width: 800px;
+    margin: 40px auto;
+}
+
+/* inner card */
+.uk-card {
+    background-color: #fafafa;
+}
+
+.-title_find_id {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.9rem;
+}
+
+.contents_find table {
+    margin: 0 auto;
+}.contents_find table td {
+    padding-bottom: 20px;
+}
+.contents_find .-submit_button {
+    position: relative;
+    top: 50%;
+    left: 49.5%;
+}
+
+
+/* login.css로부터 상속 */
+
+
+.bigger {
+    font-size: 16px;
+}
+
+.hr {
+    margin: 30px auto 5px;
+    border-top: 1px solid #e5e5e5;
+}
+.help_util {
+    margin: 0 auto;
+    text-align: center;
+}
+.help_util>ul {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.help_util>ul>li:first-child {
+    padding-left: 0;
+}
