@@ -1,6 +1,7 @@
-.contents_find {
+.contents_find_pw {
     width: 800px;
     margin: 40px auto;
+    height: 600px;
 }
 
 /* inner card */
@@ -8,30 +9,27 @@
     background-color: #fafafa;
 }
 
-.-title_find_id {
+.-title_find_pw {
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.9rem;
 }
 
-.contents_find table {
+.contents_find_pw table.find_table {
     margin: 0 auto;
-}.contents_find table td {
+}.contents_find_pw table.find_table td {
     padding-bottom: 20px;
 }
-.contents_find .-submit_button {
+.contents_find_pw .-submit_button {
     position: relative;
     top: 50%;
     left: 54.5%;
+    padding: 0 15px;
 }
 
-.contents_find table td:nth-child(2) {
-    width: 250px;
+.contents_find_pw table.find_table td:nth-child(2) {
+    width: 250px !important;
 }
-input#mm, #dd {
-    width: 79px;
-}
-
 /* login.css로부터 상속 */
 
 
@@ -46,12 +44,4 @@ input#mm, #dd {
 .help_util {
     margin: 0 auto;
     text-align: center;
-}
-.help_util>ul {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-.help_util>ul>li:first-child {
-    padding-left: 0;
 }

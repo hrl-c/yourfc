@@ -41,6 +41,7 @@ function try_login(id, pw) {
             console.log('res msg = ' + res['msg'])
             if (res['result'] == 'success') {
                 alert(res['msg']);
+                window.location.href = '/mypage';
             } else if (res['result'] == 'fail') {
                 if (res['msg'] == 'no_id') {
                     alert('가입하지 않은 아이디입니다.')

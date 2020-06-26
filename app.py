@@ -27,14 +27,14 @@ def loginfunc():
         user_result = db.users.find_one({"id": id_receive})
         id_result = 0
         pw_result = 0
-        if user_result is None :
+        if user_result is None:
             print('none')
             id_result = 0
-        else :
+        else:
             id_result = 1
             print(user_result)
             print(user_result['pw'])
-            if user_result['pw'] == pw_receive :
+            if user_result['pw'] == pw_receive:
                 pw_result = 1
             else:
                 pw_result = 0
@@ -117,6 +117,80 @@ def checkId():
         return jsonify({'result': 'success', 'token': '1'})
 
 
+@app.route('/find_id', methods=['GET', 'POST'])
+def find_id():
+    if flask.request.method == 'GET':
+        return render_template('find_id.html')
+    elif flask.request.method == 'POST':
+        print('/find_id')
+        find_id_receive_name = request.form['name_give']
+        find_id_receive_yy = request.form['yy_give']
+        find_id_receive_mm = request.form['mm_give']
+        find_id_receive_dd = request.form['dd_give']
+        find_id_receive_email = request.form['email_give']
+
+        find_user_result = db.users.find_one({'email': find_id_receive_email})
+        finded_user = 0
+        finded_user_id = ''
+        if find_user_result is None:
+            print('none')
+            finded_user = 0
+        else:
+            print('find_using_email')
+            if find_id_receive_name == find_user_result['name'] \
+                    and find_id_receive_yy == find_user_result['yy'] \
+                    and find_id_receive_mm == find_user_result['mm'] \
+                    and find_id_receive_dd == find_user_result['dd']:
+                finded_user = 1
+                print('finded')
+                finded_user_id = find_user_result['id']
+            else:
+                finded_user = 0
+                print('didnt find')
+
+        if not finded_user:
+            return jsonify({'result':'fail', 'msg':'no'})
+        elif finded_user:
+            return jsonify({'result':'success', 'msg':finded_user_id})
+        else:
+            return jsonify({'result':'fail', 'msg':'unknown_error'})
+
+
+@app.route('/find_pw', methods=['GET', 'POST'])
+def find_pw():
+    if flask.request.method == 'GET':
+        return render_template('find_pw.html')
+    elif flask.request.method == 'POST':
+        print('/find_id')
+        find_pw_receive_id = request.form['id_give']
+        find_pw_receive_name = request.form['name_give']
+        find_pw_receive_email = request.form['email_give']
+
+        find_user_result = db.users.find_one({'id': find_pw_receive_id})
+        finded_user = 0
+        finded_user_pw = ''
+        if find_user_result is None:
+            print('none')
+            finded_user = 0
+        else:
+            print('find_using_email')
+            if find_pw_receive_name == find_user_result['name'] \
+                    and find_pw_receive_email == find_user_result['email'] :
+                finded_user = 1
+                print('finded')
+                finded_user_pw = find_user_result['pw']
+            else:
+                finded_user = 0
+                print('didnt find')
+
+        if not finded_user:
+            return jsonify({'result':'fail', 'msg':'no'})
+        elif finded_user:
+            return jsonify({'result':'success', 'msg':finded_user_pw})
+        else:
+            return jsonify({'result':'fail', 'msg':'unknown_error'})
+
+
 @app.route('/mypage', methods=['GET'])
 def gotoMypage():
     ### 나중에 세션 넣어야함.
@@ -177,4 +251,4 @@ def sigsig():
 
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1100, debug=True)
+    app.run('127.0.0.1', port=1117, debug=True)

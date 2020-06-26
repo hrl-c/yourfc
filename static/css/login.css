@@ -29,11 +29,3 @@ button.uk-button {
     margin: 0 auto;
     text-align: center;
 }
-.help_util>ul {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-.help_util>ul>li:first-child {
-    padding-left: 0;
-}

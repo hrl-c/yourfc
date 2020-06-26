@@ -30,10 +30,6 @@
     text-align: center;
 }
 
-.-small_signup {
-    font-size: 0.8rem;
-    font-weight: 400;
-}
 
 .-title_signup {
     text-align: center;
@@ -69,6 +65,22 @@
 }
 .phone-size_control {
     width: 280px;
+}
+
+
+.signup-small {
+    font-size: 12px;
+    font-weight: 500;
+    color: #777;
+}
+.signup_info {
+    color: #888;
+}
+.signup_hr {
+    border-top: 1px solid #e5e5e5;
+    width: 400px;
+    height: 0;
+    margin: 30px auto 20px;
 }
 
 /* Input 숫자일때, 옆에 화살표 없애주는 코드 */
