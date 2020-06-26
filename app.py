@@ -229,26 +229,5 @@ def forTest():
     return redirect(url_for('forTest', sival="tlqkf"))
 
 
-# ===== TEST ==== #
-
-
-@app.route('/first', methods=['POST'])
-def saving():
-    receive = request.form['first_give']
-    print(receive)
-    '''
-    for item in receive:
-        #db.test.insert_one(item)
-        print(item)
-        '''
-    return jsonify({'result': 'success', 'msg': 'I GOT IT'})
-
-
-@app.route('/gotest', methods=['GET'])
-def sigsig():
-    print('jksadngkjsngkjsngkjsn')
-    return render_template('test.html')
-
-
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1117, debug=True)
+    app.run('127.0.0.1', port=1124, debug=True)

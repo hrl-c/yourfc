@@ -1,6 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block contents %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/vip_plan.css') }}">
+<script src="{{ url_for('static', filename='./js/vip_plan.js') }}"></script>
+
+<title>당신의 프랜차이즈 | VIP 플랜</title>
+
+{% include 'header.html' %}
+
 <div class="contents_vip_plan -frame">
     <h1 class="title">YOUR FranChise <span class="letter-vip">VIP</span> PALN</h1>
     <div class="plan_boxs">

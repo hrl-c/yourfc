@@ -2,6 +2,14 @@
 
 {% block contents %}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/partners.css') }}">
+<script src="{{ url_for('static', filename='./js/partners.js') }}"></script>
+
+<title>당신의 프랜차이즈 | 파트너즈</title>
+
+{% include 'header.html' %}
+
+
 <div class="contents_partners">
     <div uk-filter="target: .js-filter">
         <div class="uk-grid-small uk-grid-divider uk-child-width-auto filter_box inner_partners" uk-grid>

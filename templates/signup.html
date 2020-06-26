@@ -2,6 +2,14 @@
 
 {% block contents %}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/signup.css') }}">
+<script src="{{ url_for('static', filename='./js/signup.js') }}"></script>
+
+<title>당신의 프랜차이즈 | 회원가입</title>
+
+{% include 'header.html' %}
+
+
  <div class="contents_signup">
             <div class="uk-card uk-card-default uk-card-body">
                 <h4 class="uk-card-title -title_signup">회원가입</h4>
@@ -28,6 +36,7 @@
                     </div>
                     <br>
                     <div class="signup_hr"></div>
+                    <h3 class="uk-text-lead lead_in_signup">회원가입 정보</h3>
                     <h3 class="signup_title signup_info">&nbsp;&nbsp;아이디·비밀번호를 찾을 때 필수적으로 필요한 정보</h3>
                     <br>
                     <div class="signup_row">

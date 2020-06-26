@@ -1,6 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block contents %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/signup.css') }}">
+<script src="{{ url_for('static', filename='./js/signup.js') }}"></script>
+
+<title>당신의 프랜차이즈 | 회원가입 약관</title>
+
+{% include 'header.html' %}
+
 <div class="contents_signup">
     <div class="uk-card uk-card-default uk-card-body">
         <h4 class="uk-card-title -title_signup">회원가입</h4>

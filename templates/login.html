@@ -1,6 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block contents %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/login.css') }}">
+<script src="{{ url_for('static', filename='./js/login.js') }}"></script>
+
+<title>당신의 프랜차이즈 | 로그인</title>
+
+{% include 'header.html' %}
+
 <div class="contents_login">
     <div class="uk-card uk-card-default uk-card-body -height">
         <h4 class="uk-card-title -title_login">로그인</h4>

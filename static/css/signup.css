@@ -46,6 +46,9 @@
     margin: 0 auto 8px;
     text-align: left;
 }
+.lead_in_signup {
+    margin: 20px auto 5px !important;
+}
 .signup_title>label {
     padding: 5px;
 }

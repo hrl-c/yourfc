@@ -1,6 +1,12 @@
 {% extends 'layout.html' %}
-
 {% block contents %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/find_pw.css') }}">
+<script src="{{ url_for('static', filename='./js/find_pw.js') }}"></script>
+
+<title>당신의 프랜차이즈 | 비밀번호 찾기</title>
+{% include 'header.html' %}
+
 
 <div class="contents_find_pw">
     <div class="uk-card uk-card-default uk-card-body">
