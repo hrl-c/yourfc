@@ -40,7 +40,7 @@ function try_login(id, pw) {
             console.log('res result = ' + res['result'])
             console.log('res msg = ' + res['msg'])
             if (res['result'] == 'success') {
-                alert(res['msg']);
+                console.log(res['msg']);
                 window.location.href = '/mypage';
             } else if (res['result'] == 'fail') {
                 if (res['msg'] == 'no_id') {

@@ -25,7 +25,13 @@
     font-weight: 600 !important;
 }
 
-/* ============== signup.html */
+.btn-signup_terms {
+    color: #fff;
+    float: right;
+    margin-top:40px;
+}
+
+/* =========================================== signup.html */
 .form_signup {
     text-align: center;
 }

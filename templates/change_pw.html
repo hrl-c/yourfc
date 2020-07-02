@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block contents %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/login.css') }}">
+<script src="{{ url_for('static', filename='./js/change_pw.js') }}"></script>
+<title>당신의 프랜차이즈 | 비밀번호 변경</title>
+
+{% include 'header.html' %}
+
+
+<div class="contents_login">
+    <div class="uk-card uk-card-default uk-card-body -height">
+        <h4 class="uk-card-title -title_login">비밀번호 변경</h4>
+        <form class="form_login">
+            <div class="uk-margin">
+                <input class="uk-input uk-width-1-2" type="password" id="user_password" autocomplete="off" placeholder="비밀번호">
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input uk-width-1-2" type="password" id="user_password_check" autocomplete="off" placeholder="비밀번호 확인">
+            </div>
+
+            <button type="button" class="uk-button uk-button-primary uk-width-1-4" onclick="change_pw()"><span class="bigger">비밀번호 변경</span></button>
+        </form>
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}

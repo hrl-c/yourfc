@@ -2,6 +2,13 @@
 
 {% block contents %}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/this.css') }}">
+<script src="{{ url_for('static', filename='./js/this.js') }}"></script>
+<title>당신의 프랜차이즈 | This</title>
+
+{% include 'header.html' %}
+
+
 <something></something>
 
 {% endblock %}

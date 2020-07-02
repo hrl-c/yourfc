@@ -205,7 +205,6 @@ function signup() {
             data: {
                 'id-give': id,
                 'pw-give': pw,
-                'pw_check-give': pw_check,
                 'name-give': name,
                 'yy-give': yy,
                 'mm-give': mm,

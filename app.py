@@ -1,9 +1,9 @@
 from pymongo import MongoClient
-
 import flask
-from flask import Flask, render_template, jsonify, request, redirect, url_for
-
+from flask import Flask, render_template, jsonify, request, redirect, url_for, session
 app = Flask(__name__)
+# Session Secret Key
+app.secret_key = 'tlqkf'
 
 client = MongoClient('localhost', 27017)
 db = client.dbtest
@@ -12,6 +12,10 @@ db = client.dbtest
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+# rule, endpoint, view_func (, provide_automatic_option, **option)
+app.add_url_rule('/', 'index', home)
 
 
 # ===== util ===== #
@@ -38,35 +42,48 @@ def loginfunc():
                 pw_result = 1
             else:
                 pw_result = 0
-
         if not id_result:
             return jsonify({'result': 'fail', 'msg': 'no_id'})
         elif not pw_result:
             return jsonify({'result': 'fail', 'msg': 'no_pw'})
         elif id_result and pw_result:
+            user_name = user_result['name']
+            user_id = user_result['id']
+            session['user_name'] = user_name
+            session['user_id'] = user_id
             return jsonify({'result': 'success', 'msg': 'login성공'})
         else:
             return jsonify({'result': 'error', 'msg': 'error444'})
-
     elif flask.request.method == 'GET':
         return render_template('login.html')
     else:
         print('method-error_In_login')
 
 
+@app.route('/logout', methods=['GET'])
+def logout():
+    session.pop('user_name', None)
+    return redirect(url_for('.index'))
+# url_for( endpoint, **value )
+
 @app.route('/signup_terms', methods=['GET'])
 def goToSignup_terms():
-    return render_template('signup_terms.html')
+    if 'user_name' in session:
+        return render_template('error_300.html')
+    else:
+        return render_template('signup_terms.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signupfunc():
     if flask.request.method == 'GET':
-        return render_template('signup.html')
+        if 'user_name' in session:
+            return render_template('error_300.html')
+        else:
+            return render_template('signup.html')
     elif flask.request.method == 'POST':
         id_receive = request.form['id-give']
         pw_receive = request.form['pw-give']
-        pw_check_receive = request.form['pw_check-give']
         name_receive = request.form['name-give']
         yy_receive = request.form['yy-give']
         mm_receive = request.form['mm-give']
@@ -84,7 +101,6 @@ def signupfunc():
         new_user = {
             'id': id_receive,
             'pw': pw_receive,
-            'pw_check': pw_check_receive,
             'name': name_receive,
             'yy': yy_receive,
             'mm': mm_receive,
@@ -191,10 +207,51 @@ def find_pw():
             return jsonify({'result':'fail', 'msg':'unknown_error'})
 
 
+# ===================== MyPage CODEs
 @app.route('/mypage', methods=['GET'])
 def gotoMypage():
-    ### 나중에 세션 넣어야함.
+    if 'user_name' in session:
+        print('SESSIOOOOOOOOOOOOOOOOOOOOOON')
+        user_name = session['user_name']
+        return render_template('mypage.html', user_name = user_name)
     return render_template('mypage.html')
+
+
+@app.route('/check_pw', methods=['GET', 'POST'])
+def check_pw_for_myPage():
+    if flask.request.method == 'POST':
+        pw_receive = request.form['pw_give']
+        print('id-receive = ' + pw_receive)
+        this_user_id = session['user_id']
+        user_result = db.users.find_one({"id": this_user_id})
+        pw_result = 0
+        if user_result['pw'] != pw_receive :
+            return jsonify({'result':'fail', 'msg':'wrong_pw'})
+        elif user_result['pw'] == pw_receive :
+            return jsonify({'result':'success', 'msg':'found_it'})
+        else :
+            return jsonify({'result':'fail','msg':'error_500'})
+    elif flask.request.method == 'GET':
+        return render_template('check_pw.html')
+    else:
+        print('method-error_In_login')
+
+
+@app.route('/change_pw', methods=['GET', 'POST'])
+def change_pw_for_myPage():
+    if flask.request.method == 'POST':
+        pw_receive = request.form['pw_give']
+        this_user_id = session['user_id']
+        pre_pw = db.users.find_one({'id':this_user_id})['pw']
+        print(pw_receive, pre_pw)
+        if pre_pw == pw_receive:
+            return jsonify({'result':'fail', 'msg':'기존의 비밀번호와 같습니다.'})
+        elif pre_pw != pw_receive:
+            db.users.update( {'id': this_user_id}, {'$set': {'pw' : pw_receive}})
+            return jsonify({'result':'success', 'msg':'비밀번호가 변경되었습니다.'})
+        else: return jsonify({'result':'fail','msg':'알 수 없는 에러가 발생하였습니다.'})
+    else :
+        return render_template('change_pw.html')
 
 
 @app.route('/vip', methods=['GET'])
@@ -210,6 +267,11 @@ def check_vip():
 @app.route('/search_brand', methods=['GET'])
 def goToSearch_brand():
     return render_template('search_brand.html')
+
+
+@app.route('/fair', methods=['GET'])
+def gotoFair():
+    return render_template('fair.html')
 
 
 @app.route('/partners', methods=['GET'])
@@ -230,4 +292,4 @@ def forTest():
 
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1124, debug=True)
+    app.run('127.0.0.1', port=1178, debug=True)

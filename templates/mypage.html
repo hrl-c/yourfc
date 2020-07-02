@@ -12,7 +12,11 @@
 
 <div class="contents_mypage -frame">
     <div class="uk-card uk-card-default uk-card-body -mypage_box -mypage_box-border">
+        {% if user_name %}
+        <h3 class="uk-card-title">{{user_name}} 님 안녕하세요 ?</h3>
+        {% else %}
         <h3 class="uk-card-title">ㅇㅇㅇ 님 안녕하세요 ?</h3>
+        {% endif %}
         <div class="inner_mypage">
             <div class="inner_mypage_box">
                 <dl>
@@ -74,7 +78,7 @@
                 <div class="uk-card uk-card-default mypage_item">
                     <article class="uk-article">
                         <span class="uk-article-lead">
-                            <a href="#">
+                            <a href="/check_pw">
                             비밀번호 변경
                             </a>
                         </span>
@@ -82,7 +86,7 @@
                             비밀번호를 변경하여 보안을 강화할 수 있습니다.
                         </p>
                         <div>
-                            <a class="uk-button uk-button-text" href="#">변경하기</a>
+                            <a class="uk-button uk-button-text" href="/check_pw">변경하기</a>
                         </div>
                     </article>
                 </div>
@@ -92,7 +96,7 @@
                 <div class="uk-card uk-card-default mypage_item">
                     <article class="uk-article">
                         <span class="uk-article-lead">
-                            <a href="#">
+                            <a href="/check_pw">
                             프로필 수정
                             </a>
                         </span>
@@ -100,7 +104,7 @@
                             이름, 생년월일, 성별 등을 수정할 수 있습니다.
                         </p>
                         <div>
-                            <a class="uk-button uk-button-text" href="#">수정하기</a>
+                            <a class="uk-button uk-button-text" href="/check_pw">수정하기</a>
                         </div>
                     </article>
                 </div>

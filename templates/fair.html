@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block contents %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/fair.css') }}">
+<script src="{{ url_for('static', filename='./js/fair.js') }}"></script>
+<title>당신의 프랜차이즈 | 창업 박람회</title>
+
+{% include 'header.html' %}
+
+
+<div class="contents_fair -frame">
+    <h2 class="pretty">프랜차이즈 박람회</h2>
+    <table class="uk-table uk-table-hover uk-table-divider">
+        <thead>
+            <th>sort</th>
+            <th>name</th>
+            <th>date</th>
+            <th>days</th>
+            <th>where</th>
+            <th>time</th>
+        </thead>
+        <tbody>
+            <tr class="fixed">
+                <td><a href="#">프랜차이즈</a></td>
+                <td><a href="#"><span class="uk-text-danger uk-text-bolder">월드전람</span>은 토요일 30분 일찍 마감합니다.</a></td>
+                <td><a href="#">2020</a></td>
+                <td><a href="#"></a></td>
+                <td><a href="#"></a></td>
+                <td><a href="#">*토요일 마감 16:30</a></td>
+            </tr>
+            <tr class="fixed">
+                <td><a href="#">프랜차이즈</a></td>
+                <td><a href="#">코로나 관련 박람회 취소 현황</a></td>
+                <td><a href="#">2020/01/01~03</a></td>
+                <td><a href="#">n일간</a></td>
+                <td><a href="#">COEX & SETEC</a></td>
+                <td><a href="#">10:00 ~ 17:00 (입장 16:30 마감)</a></td>
+            </tr>
+            
+
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+
+
+{% extends 'layout.html' %}
+
+{% block contents %}
+
+<title>당신의 프랜차이즈 | Error</title>
+
+{% include 'header.html' %}
+<div style="width: 300px; margin: 40px auto; display:flex; flex-direction:column; align-items: center;">
+<h1>ERROR - 500</h1>
+    <h3>죄송합니다 서버에 오류가 발생하였습니다.</h3>
+    <h5>다시 한 번 시도해주세요.</h5>
+    <p>관리자에게 상황을 이메일을 보내주시면 조속히 처리하겠습니다.</p>
+    <br><br>
+    <a href="/" class="uk-button uk-button-default">홈으로 돌아가기</a>
+</div>
+
+{% endblock %}
