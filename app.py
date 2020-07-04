@@ -1,16 +1,30 @@
 from pymongo import MongoClient
 import flask
 from flask import Flask, render_template, jsonify, request, redirect, url_for, session
+from datetime import timedelta
 app = Flask(__name__)
 # Session Secret Key
 app.secret_key = 'tlqkf'
 
+
+# Session deadline
+def make_session_paramanet():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minute=5)
+
+
+# DB
 client = MongoClient('localhost', 27017)
 db = client.dbtest
 
 
 @app.route('/')
 def home():
+    tlqkf = 'smlsmlsml123'
+    sival = db.users.find_one({'id': tlqkf})
+    print(sival['yymmdd'])
+    print(sival['yymmdd']['birth'])
+    print(sival['yymmdd']['signup']['su_yy'])
     return render_template('index.html')
 
 
@@ -63,6 +77,7 @@ def loginfunc():
 @app.route('/logout', methods=['GET'])
 def logout():
     session.pop('user_name', None)
+    session.pop('user_id', None)
     return redirect(url_for('.index'))
 # url_for( endpoint, **value )
 
@@ -96,23 +111,37 @@ def signupfunc():
         su_yy_receive = request.form['su_yy-give']
         su_mm_receive = request.form['su_mm-give']
         su_dd_receive = request.form['su_dd-give']
-        su_yo_receive = request.form['su_yo-give']
+
+
+        # items = ['id', 'pw', 'name', 'yy', 'mm' ,'dd', 'gender', 'email', 'telecom', 'phone', 'su_yy', 'su_mm', 'su_dd']
+        #
+        # for item in items:
+        #     item = request.form[item]
+        #     return item
 
         new_user = {
             'id': id_receive,
             'pw': pw_receive,
             'name': name_receive,
-            'yy': yy_receive,
-            'mm': mm_receive,
-            'dd': dd_receive,
+            'yymmdd' : {
+                'birth' : {
+                    'yy': yy_receive,
+                    'mm': mm_receive,
+                    'dd': dd_receive
+                },
+                'signup' : {
+                    'su_yy': su_yy_receive,
+                    'su_mm': su_mm_receive,
+                    'su_dd': su_dd_receive
+                }
+            },
             'gender': gender_receive,
             'email': email_receive,
             'telecom': telecom_receive,
             'phone': phone_receive,
             'su_yy': su_yy_receive,
             'su_mm': su_mm_receive,
-            'su_dd': su_dd_receive,
-            'su_yo': su_yo_receive
+            'su_dd': su_dd_receive
         }
 
         db.users.insert_one(new_user)
@@ -280,15 +309,15 @@ def gotoPartners():
 
 
 ### for test
-@app.route('/test', methods=['GET'])
-def forTest():
-    print('1')
-    '''
-    now_receive = request.args.get('now')
-    print(now_receive)
-    '''
+@app.route('/session_test', methods=['GET'])
+def t1():
+    ' 가입정보 들고오기 '
+    pw_receive = request.form['pw_give']
+    user_id = 'dlagkfka93'
+    user_result = db.users.find_one({"id": user_id})
+    user_pw = user_result['pw']
 
-    return redirect(url_for('forTest', sival="tlqkf"))
+
 
 
 if __name__ == '__main__':
