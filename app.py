@@ -97,6 +97,18 @@ def signupfunc():
         else:
             return render_template('signup.html')
     elif flask.request.method == 'POST':
+
+        items = ['id', 'pw', 'name', 'yy', 'mm', 'dd', 'su_yy', 'su_mm', 'su_dd', 'gender', 'email', 'telecom', ' phone']
+
+        dateitems = ['yy', 'mm', 'dd', 'su_yy', 'su_mm', 'su_dd']
+        var_list = {}
+
+        tntwk = 0
+        # for it in items:
+            # receive = it+'_receive'
+            # from_jq = request.form[it]
+            # var_list[receive] = from_jq
+            # return receive
         id_receive = request.form['id-give']
         pw_receive = request.form['pw-give']
         name_receive = request.form['name-give']
@@ -111,38 +123,68 @@ def signupfunc():
         su_yy_receive = request.form['su_yy-give']
         su_mm_receive = request.form['su_mm-give']
         su_dd_receive = request.form['su_dd-give']
+        new_user = {}
+        num = 0
+        numb = 0
+        for item in items:
+            #date 특별취급
+            if item in dateitems:
+                if num == 0:
+                    new_user['yymmdd'] = {}
+                    new_user['yymmdd']['birth'] = {}
+                    new_user['yymmdd']['signup'] = {}
+                if item == 'yy' or item == 'mm' or item == 'dd':
+                    # new_user['yymmdd']['birth'][item] = var_list[item+'_receive']
+                    new_user['yymmdd']['birth'][item] = item + '_receive'
+                else:
+                    # new_user['yymmdd']['signup'][item] = var_list[item + '_receive']
+                    new_user['yymmdd']['signup'][item] = item + '_receive'
+                numb += 1
+            else:
+                # new_user[item] = var_list[item+'_receive']
+                new_user[item] = item + '_receive'
+                print(new_user)
+            num += 1
 
-
-        # items = ['id', 'pw', 'name', 'yy', 'mm' ,'dd', 'gender', 'email', 'telecom', 'phone', 'su_yy', 'su_mm', 'su_dd']
+        # id_receive = request.form['id-give']
+        # pw_receive = request.form['pw-give']
+        # name_receive = request.form['name-give']
+        # yy_receive = request.form['yy-give']
+        # mm_receive = request.form['mm-give']
+        # dd_receive = request.form['dd-give']
+        # gender_receive = request.form['gender-give']
+        # email_receive = request.form['email-give']
+        # telecom_receive = request.form['telecom-give']
+        # phone_receive = request.form['phone-give']
         #
-        # for item in items:
-        #     item = request.form[item]
-        #     return item
+        # su_yy_receive = request.form['su_yy-give']
+        # su_mm_receive = request.form['su_mm-give']
+        # su_dd_receive = request.form['su_dd-give']
 
-        new_user = {
-            'id': id_receive,
-            'pw': pw_receive,
-            'name': name_receive,
-            'yymmdd' : {
-                'birth' : {
-                    'yy': yy_receive,
-                    'mm': mm_receive,
-                    'dd': dd_receive
-                },
-                'signup' : {
-                    'su_yy': su_yy_receive,
-                    'su_mm': su_mm_receive,
-                    'su_dd': su_dd_receive
-                }
-            },
-            'gender': gender_receive,
-            'email': email_receive,
-            'telecom': telecom_receive,
-            'phone': phone_receive,
-            'su_yy': su_yy_receive,
-            'su_mm': su_mm_receive,
-            'su_dd': su_dd_receive
-        }
+        # new_user = {
+        #     'id': id_receive,
+        #     'pw': pw_receive,
+        #     'name': name_receive,
+        #     'yymmdd' : {
+        #         'birth' : {
+        #             'yy': yy_receive,
+        #             'mm': mm_receive,
+        #             'dd': dd_receive
+        #         },
+        #         'signup' : {
+        #             'su_yy': su_yy_receive,
+        #             'su_mm': su_mm_receive,
+        #             'su_dd': su_dd_receive
+        #         }
+        #     },
+        #     'gender': gender_receive,
+        #     'email': email_receive,
+        #     'telecom': telecom_receive,
+        #     'phone': phone_receive,
+        #     'su_yy': su_yy_receive,
+        #     'su_mm': su_mm_receive,
+        #     'su_dd': su_dd_receive
+        # }
 
         db.users.insert_one(new_user)
 
@@ -321,4 +363,4 @@ def t1():
 
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', port=1178, debug=True)
+    app.run('127.0.0.1', port=1179, debug=True)
